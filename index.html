@@ -214,42 +214,94 @@
     max-width: 600px;
   }
 
-  /* ── SLIDE 3: PROTOCOL FRAGMENTATION ── */
-  .frag-cols {
+  /* ── SLIDE 4: WHAT'S A SKILL ── */
+  .skill-anatomy {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    max-width: 920px;
+    grid-template-columns: 280px 1fr;
+    gap: 32px;
+    max-width: 960px;
     margin-bottom: 36px;
   }
 
-  .frag-card {
+  @media (max-width: 768px) {
+    .skill-anatomy { grid-template-columns: 1fr; }
+  }
+
+  .file-tree {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .file-tree .dir {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .file-tree .file {
+    color: var(--muted);
+    padding-left: 20px;
+  }
+
+  .file-tree .file.highlight {
+    color: var(--fg);
+    font-weight: 600;
+  }
+
+  .file-tree .annotation {
+    color: var(--muted);
+    font-size: 11px;
+    font-style: italic;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .skill-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .skill-detail-card {
     padding: 24px;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
-    text-align: center;
+    transition: border-color 0.3s;
   }
 
-  .frag-card .proto-name {
+  .skill-detail-card:hover { border-color: var(--accent); }
+
+  .skill-detail-card h3 {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 700;
     margin-bottom: 8px;
   }
 
-  .frag-card:nth-child(1) .proto-name { color: var(--blue); }
-  .frag-card:nth-child(2) .proto-name { color: var(--accent); }
-  .frag-card:nth-child(3) .proto-name { color: var(--purple); }
-  .frag-card:nth-child(4) .proto-name { color: var(--yellow); }
+  .skill-detail-card:nth-child(1) h3 { color: var(--accent); }
+  .skill-detail-card:nth-child(2) h3 { color: var(--blue); }
+  .skill-detail-card:nth-child(3) h3 { color: var(--purple); }
 
-  .frag-card .proto-detail {
-    font-size: 13px;
+  .skill-detail-card p {
+    font-size: 14px;
     color: var(--muted);
-    line-height: 1.4;
+    line-height: 1.5;
   }
 
-  /* ── SLIDE 3: MARKET VALIDATION ── */
+  .skill-takeaway {
+    font-size: 17px;
+    color: var(--fg);
+    max-width: 700px;
+    line-height: 1.6;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  .skill-takeaway strong { color: var(--accent); }
   .validation-hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -320,64 +372,6 @@
 
   .validation-takeaway strong { color: var(--accent); }
   .validation-takeaway em { color: var(--red); font-style: normal; font-weight: 600; }
-
-  .protocol-gap {
-    font-size: 18px;
-    color: var(--fg);
-    max-width: 700px;
-    line-height: 1.6;
-    padding: 24px 0;
-    border-top: 1px solid var(--border);
-  }
-
-  .protocol-gap strong { color: var(--accent); }
-
-  /* ── SLIDE 4: IT'S BROKEN ── */
-  .broken-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 900px;
-  }
-
-  .broken-card {
-    display: flex;
-    gap: 20px;
-    padding: 28px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    align-items: flex-start;
-    transition: border-color 0.3s;
-  }
-
-  .broken-card:hover { border-color: var(--red); }
-
-  .broken-card .icon {
-    font-size: 18px;
-    flex-shrink: 0;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    background: #ff4d6a12;
-    color: var(--red);
-  }
-
-  .broken-card h3 {
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--red);
-    margin-bottom: 6px;
-  }
-
-  .broken-card p {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.5;
-  }
 
   /* ── SLIDE 5: INSIGHT ── */
   .slide-insight {
@@ -762,7 +756,7 @@
 <!-- SLIDE 2: THE PATTERN -->
 <section class="slide" data-slide="1">
   <span class="logo-mark">Enact</span>
-  <span class="slide-number">02 / 12</span>
+  <span class="slide-number">02 / 11</span>
   <p class="section-label">The Pattern</p>
   <h2>Every platform shift creates a packaging layer</h2>
   <div class="timeline">
@@ -788,7 +782,7 @@
 <!-- SLIDE 3: MARKET VALIDATION -->
 <section class="slide" data-slide="2">
   <span class="logo-mark">Enact</span>
-  <span class="slide-number">03 / 12</span>
+  <span class="slide-number">03 / 11</span>
   <p class="section-label">Market Validation</p>
   <h2>OpenClaw proved the demand — and the danger</h2>
   <div class="validation-hero">
@@ -826,36 +820,36 @@
   <p class="validation-takeaway">OpenClaw proved that developers want extensible agent skills. Its security crisis proved that <strong>packaging without trust is a supply chain disaster</strong>. Cisco called it <em>"an absolute nightmare."</em></p>
 </section>
 
-<!-- SLIDE 4: THE PROBLEM -->
+<!-- SLIDE 4: WHAT'S A SKILL -->
 <section class="slide" data-slide="3">
   <span class="logo-mark">Enact</span>
-  <span class="slide-number">04 / 12</span>
-  <p class="section-label">The Problem</p>
-  <h2>The tooling layer is broken</h2>
-  <div class="broken-grid">
-    <div class="broken-card">
-      <div class="icon">⚠</div>
-      <div>
-        <h3>Protocols are fragmenting</h3>
-        <p>MCP, CLI tools, API wrappers — new interfaces keep emerging. MCP has context bloat issues, CLI tools lack discovery, and nothing has converged. The protocol is a moving target.</p>
-      </div>
+  <span class="slide-number">04 / 11</span>
+  <p class="section-label">The Product</p>
+  <h2>A skill is code + docs + manifest — packaged to run anywhere</h2>
+  <div class="skill-anatomy">
+    <div class="file-tree">
+      <div class="dir">acme/scraper/</div>
+      <div class="file highlight">SKILL.md <span class="annotation">← agent reads this</span></div>
+      <div class="file highlight">skill.yaml <span class="annotation">← identity + runtime</span></div>
+      <div class="file">requirements.txt</div>
+      <div class="file">scrape.py</div>
     </div>
-    <div class="broken-card">
-      <div class="icon">✕</div>
-      <div>
-        <h3>No trust model</h3>
-        <p>"Install this tool" means running unaudited code with host access. No signing, no verification, no sandboxing. Enterprises won't accept this.</p>
+    <div class="skill-details">
+      <div class="skill-detail-card">
+        <h3>SKILL.md — Agent-facing docs</h3>
+        <p>Teaches the agent what the skill does, how to invoke it, and what to expect. Prose, not schema. The agent reads it like a human would read a README.</p>
       </div>
-    </div>
-    <div class="broken-card">
-      <div class="icon">⚠</div>
-      <div>
-        <h3>No governance or visibility</h3>
-        <p>Which agents use which tools? Who approved this? When something breaks, teams dig through logs across systems. No audit trail, no access control, no observability.</p>
+      <div class="skill-detail-card">
+        <h3>skill.yaml — Identity + execution</h3>
+        <p>Declares the base image, build steps, secrets, and scripts. The skill says what it needs — Enact decides where and how it runs.</p>
+      </div>
+      <div class="skill-detail-card">
+        <h3>Your code — Packaged + signed</h3>
+        <p>Any language, any framework. Enact wraps it in a container, signs it with Sigstore, and publishes it to the registry. Cryptographic trust from day one.</p>
       </div>
     </div>
   </div>
-  <p class="protocol-gap">Every approach has the same gap: <strong>no standard way to package, distribute, trust, or govern agent tools</strong>. That layer is missing regardless of how agents talk to tools.</p>
+  <p class="skill-takeaway">Skills work with MCP, CLI tools, or whatever comes next. <strong>Enact packages the capability — the protocol is just the interface.</strong></p>
 </section>
 
 <!-- SLIDE 5: THE INSIGHT -->
@@ -863,11 +857,11 @@
   <span class="logo-mark">Enact</span>
   <span class="slide-number">05 / 11</span>
   <div class="insight-lines">
-    <div class="line-dim">Protocols come and go.</div>
-    <div class="line-dim">The packaging layer is permanent.</div>
+    <div class="line-dim">Agents need tools.</div>
+    <div class="line-dim">There's no standard way to package them.</div>
     <div class="line-bright">Enact is that layer.</div>
   </div>
-  <p class="insight-sub">How organizations package, distribute, trust, govern, and observe their agent capabilities — regardless of protocol.</p>
+  <p class="insight-sub">How organizations package, distribute, trust, govern, and observe their agent capabilities — however they're invoked.</p>
 </section>
 
 <!-- SLIDE 6: ONE PLATFORM -->
@@ -1056,7 +1050,7 @@
     </div>
   </div>
   <div class="contact-row">
-    <a href="mailto:keithalgroves@gmail.com">keithalgroves@gmail.coms</a>
+    <a href="mailto:keithalgroves@gmail.com">keithalgroves@gmail.com</a>
     <a href="https://enact.tools">enact.tools</a>
   </div>
 </section>
