@@ -7,20 +7,20 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #07070c;
-    --fg: #e8e6e1;
-    --accent: #00ffa3;
-    --accent-dim: #00ffa315;
-    --accent-mid: #00ffa350;
-    --surface: #0f0f18;
-    --surface-2: #161622;
-    --border: #1e1e2e;
-    --muted: #6b6b80;
-    --red: #ff4d6a;
-    --amber: #ffb84d;
-    --blue: #4da6ff;
-    --yellow: #ffd24d;
-    --purple: #a855f7;
+    --bg:          hsl(30, 3.3%, 11.8%);
+    --fg:          hsl(48, 33.3%, 97.1%);
+    --accent:      hsl(15, 63.1%, 59.6%);
+    --accent-dim:  hsl(15 63.1% 59.6% / 0.12);
+    --accent-mid:  hsl(15 63.1% 59.6% / 0.40);
+    --surface:     hsl(60, 2.7%, 14.5%);
+    --surface-2:   hsl(60, 2.1%, 18.4%);
+    --border:      hsl(48, 3.4%, 29.2%);
+    --muted:       hsl(48, 4.8%, 59.2%);
+    --red:         hsl(0, 67%, 59.6%);
+    --amber:       hsl(40, 71%, 50%);
+    --blue:        hsl(210, 70.9%, 51.6%);
+    --yellow:      hsl(39, 93.4%, 35.9%);
+    --purple:      hsl(251, 40.2%, 54.1%);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -108,8 +108,8 @@
   /* ── SLIDE 1: TITLE ── */
   .slide-title {
     background:
-      radial-gradient(ellipse at 15% 50%, #00ffa306 0%, transparent 55%),
-      radial-gradient(ellipse at 85% 20%, #a855f706 0%, transparent 45%),
+      radial-gradient(ellipse at 15% 50%, hsl(15 63.1% 59.6% / 0.06) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 20%, hsl(251 40.2% 54.1% / 0.06) 0%, transparent 45%),
       var(--bg);
   }
 
@@ -119,7 +119,7 @@
     letter-spacing: -4px;
     line-height: 0.9;
     margin-bottom: 28px;
-    background: linear-gradient(135deg, var(--accent), #4da6ff);
+    background: linear-gradient(135deg, var(--accent), var(--blue));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -321,13 +321,13 @@
   }
 
   .validation-side.demand {
-    background: linear-gradient(135deg, var(--surface), #0f1a14);
-    border-color: #00ffa325;
+    background: linear-gradient(135deg, var(--surface), hsl(15 30% 13%));
+    border-color: hsl(15 63.1% 59.6% / 0.2);
   }
 
   .validation-side.gap {
-    background: linear-gradient(135deg, var(--surface), #1a0f14);
-    border-color: #ff4d6a25;
+    background: linear-gradient(135deg, var(--surface), hsl(0 20% 13%));
+    border-color: hsl(0 67% 59.6% / 0.2);
   }
 
   .validation-side h3 {
@@ -378,7 +378,7 @@
     text-align: center;
     align-items: center;
     background:
-      radial-gradient(ellipse at 50% 50%, #00ffa308 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, hsl(15 63.1% 59.6% / 0.07) 0%, transparent 50%),
       var(--bg);
   }
 
@@ -490,7 +490,7 @@
     font-size: 14px;
     color: var(--muted);
     padding: 8px 0;
-    border-bottom: 1px solid #1a1a28;
+    border-bottom: 1px solid var(--border);
     line-height: 1.4;
   }
 
@@ -664,7 +664,7 @@
   /* ── SLIDE 11: THE ASK ── */
   .slide-ask {
     background:
-      radial-gradient(ellipse at 50% 60%, #00ffa308 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 60%, hsl(15 63.1% 59.6% / 0.07) 0%, transparent 50%),
       var(--bg);
   }
 
