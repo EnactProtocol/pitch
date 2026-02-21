@@ -52,7 +52,6 @@
     .slide { padding: 40px 24px; }
   }
 
-  /* ── nav chrome ── */
   .slide-number {
     position: absolute;
     top: 36px;
@@ -80,10 +79,8 @@
     .slide-number { right: 24px; }
   }
 
-  /* ── dividers ── */
   .slide + .slide { border-top: 1px solid var(--border); }
 
-  /* ── typography ── */
   .eyebrow {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -97,7 +94,7 @@
   h2 { font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 700; line-height: 1.1; }
   h3 { font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 600; }
 
-  .dim   { color: var(--muted); }
+  .dim    { color: var(--muted); }
   .accent { color: var(--accent); }
   .blue   { color: var(--blue); }
   .purple { color: var(--purple); }
@@ -111,7 +108,6 @@
     max-width: 620px;
   }
 
-  /* ── code ── */
   code, .mono {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.85em;
@@ -136,7 +132,6 @@
   .code-block .n  { color: var(--blue); }
   .code-block .a  { color: var(--accent); }
 
-  /* ── layout helpers ── */
   .cols {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -154,7 +149,6 @@
     .cols, .cols-3 { grid-template-columns: 1fr; }
   }
 
-  /* ── cards ── */
   .card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -171,7 +165,6 @@
     margin-bottom: 10px;
   }
 
-  /* ── pill tags ── */
   .tag {
     display: inline-block;
     padding: 4px 14px;
@@ -189,15 +182,6 @@
   .tag-green   { background: hsl(150 60% 50% / 0.1); color: var(--green);  border: 1px solid hsl(150 60% 50% / 0.3); }
   .tag-muted   { background: hsl(0 0% 50% / 0.08);  color: var(--muted);  border: 1px solid var(--border); }
 
-  /* ── big stat ── */
-  .big-stat {
-    font-size: clamp(3rem, 8vw, 7rem);
-    font-weight: 800;
-    line-height: 1;
-    color: var(--accent);
-  }
-
-  /* ── step list ── */
   .steps { list-style: none; display: flex; flex-direction: column; gap: 16px; }
   .steps li {
     display: flex;
@@ -221,7 +205,6 @@
     justify-content: center;
   }
 
-  /* ── flow diagram ── */
   .flow {
     display: flex;
     align-items: center;
@@ -258,7 +241,6 @@
     color: var(--accent);
   }
 
-  /* ── quote ── */
   .blockquote {
     border-left: 3px solid var(--accent);
     padding-left: 28px;
@@ -269,7 +251,6 @@
     color: hsl(48, 20%, 85%);
   }
 
-  /* ── demo slide ── */
   .demo-terminal {
     background: hsl(0, 0%, 5%);
     border: 1px solid var(--border);
@@ -300,13 +281,11 @@
   .ok     { color: var(--green); }
   .warn   { color: var(--gold); }
 
-  /* ── title slide special ── */
   #slide-1 {
     background: radial-gradient(ellipse 80% 60% at 70% 50%, hsl(15 63% 59% / 0.07), transparent 70%),
                 var(--bg);
   }
 
-  /* ── bg accent blobs ── */
   .slide::before {
     content: '';
     position: absolute;
@@ -315,7 +294,6 @@
     pointer-events: none;
   }
 
-  /* ── progress bar ── */
   #progress {
     position: fixed;
     top: 0;
@@ -325,6 +303,25 @@
     width: 0%;
     z-index: 100;
     transition: width 0.2s;
+  }
+
+  /* v2: compact comparison table */
+  .compare-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid hsl(48 3.4% 29.2% / 0.4);
+    font-size: 0.95rem;
+  }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-label {
+    flex: 0 0 140px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 </style>
 </head>
@@ -337,7 +334,7 @@
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-1">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">01 / 16</div>
+  <div class="slide-number">01 / 13</div>
 
   <div class="eyebrow">A developer talk</div>
   <h1>
@@ -345,7 +342,7 @@
     <span class="accent">for AI Agents</span>
   </h1>
   <p class="subtitle">
-    How MCP, packaged skills, and a signed registry are changing what it means to ship software.
+    Packaged capabilities. Signed provenance. One registry.
   </p>
 
   <div style="margin-top: 60px; display: flex; gap: 12px; flex-wrap: wrap;">
@@ -362,168 +359,78 @@
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-2">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">02 / 16</div>
+  <div class="slide-number">02 / 13</div>
 
-  <div class="eyebrow">The ecosystem</div>
-  <h2>Software is changing <span class="accent">shape</span></h2>
+  <div class="eyebrow">The shift</div>
+  <h2>Agents are the <span class="accent">new interface</span></h2>
 
-  <div style="margin-top: 40px;" class="cols">
-    <div>
-      <p style="font-size:1.05rem; color: var(--muted); margin-bottom: 28px;">
-        For 20 years, software meant a UI you click through. Today, AI agents are the new interface.
-        They don't browse apps — they call tools.
-      </p>
+  <div style="margin-top: 48px; display: flex; gap: 28px; max-width: 900px; align-items: stretch;">
 
-      <div class="steps" style="margin-top: 8px;">
-        <li>
-          <div class="step-num">1</div>
-          <div>
-            <strong>On-prem era</strong><br>
-            <span class="dim" style="font-size:0.9rem">You installed software on your machine</span>
-          </div>
-        </li>
-        <li>
-          <div class="step-num">2</div>
-          <div>
-            <strong>SaaS era</strong><br>
-            <span class="dim" style="font-size:0.9rem">Software lived in the cloud, you opened a browser</span>
-          </div>
-        </li>
-        <li>
-          <div class="step-num">3</div>
-          <div>
-            <strong class="accent">Agent era — now</strong><br>
-            <span class="dim" style="font-size:0.9rem">Agents call tools on your behalf. No UI needed.</span>
-          </div>
-        </li>
-      </div>
+    <div class="card" style="flex:1; opacity: 0.5;">
+      <div class="label" style="color:var(--muted);">Before</div>
+      <p style="font-size:1.3rem; font-weight:700; margin-bottom:12px;">Click through UI</p>
+      <p style="font-size:0.85rem; color:var(--muted);">Login &rarr; Dashboard &rarr; Button &rarr; Result</p>
     </div>
 
-    <div>
-      <div class="card" style="margin-bottom: 16px;">
-        <div class="label">Before</div>
-        <p style="font-size:0.95rem; color: var(--muted);">
-          User → Login → Dashboard → Click button → See result
-        </p>
-      </div>
-      <div class="card" style="border-color: var(--accent);">
-        <div class="label" style="color: var(--accent);">Now</div>
-        <p style="font-size:0.95rem;">
-          User → Agent → <span class="accent">call tool()</span> → Done
-        </p>
-        <div style="margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap;">
-          <span class="tag tag-accent">Claude</span>
-          <span class="tag tag-blue">ChatGPT</span>
-          <span class="tag tag-purple">Cursor</span>
-          <span class="tag tag-muted">Copilot</span>
-        </div>
-      </div>
+    <div style="display:flex; align-items:center; font-size:2rem; color:var(--border);">&rarr;</div>
+
+    <div class="card" style="flex:1; border-color: var(--accent-mid); background: var(--accent-dim);">
+      <div class="label">Now</div>
+      <p style="font-size:1.3rem; font-weight:700; margin-bottom:12px;">Agent calls <span class="accent">tool()</span></p>
+      <p style="font-size:0.85rem; color:var(--muted);">Prompt &rarr; Agent &rarr; Tool &rarr; Done</p>
     </div>
+
   </div>
+
+  <p style="margin-top: 40px; font-size:1.05rem; color: var(--muted); max-width: 680px;">
+    Software used to ship as UIs. Now it ships as <strong>capabilities agents can call</strong>.
+    The question: how do agents find, trust, and run those capabilities?
+  </p>
 </section>
 
 
 <!-- ─────────────────────────────────────────
-     3 · MCP
+     3 · THREE PILLARS
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-3">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">03 / 16</div>
+  <div class="slide-number">03 / 13</div>
 
-  <div class="eyebrow">Anatomy of an AI agent</div>
-  <h2>Three pillars of <span class="accent">every agent</span></h2>
+  <div class="eyebrow">Anatomy of an agent</div>
+  <h2>Every agent has <span class="accent">three pillars</span></h2>
 
   <div style="margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; max-width: 1000px;">
 
-    <div class="card" style="padding: 32px 28px; border-color: var(--border);">
-      <div style="font-size: 2.4rem; margin-bottom: 16px;">🧠</div>
+    <div class="card" style="padding: 32px 28px;">
+      <div style="font-size: 2.2rem; margin-bottom: 14px;">&#129504;</div>
       <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-bottom:12px;">Context</div>
-      <p style="font-size:1.5rem; font-weight:800; line-height:1.1; margin-bottom:20px;">Knowledge<br>&amp; Memory</p>
-      <div style="display:flex; flex-direction:column; gap:6px; font-size:0.8rem; font-family:'JetBrains Mono',monospace;">
-        <span style="color:var(--muted);">AGENTS.md / CLAUDE.md</span>
-        <span style="color:var(--muted);">RAG / embeddings</span>
-        <span style="color:var(--muted);">Skills (docs + instructions)</span>
+      <p style="font-size:1.3rem; font-weight:700; line-height:1.2; margin-bottom:16px;">Knowledge<br>&amp; Memory</p>
+      <div style="display:flex; flex-direction:column; gap:5px; font-size:0.78rem; font-family:'JetBrains Mono',monospace; color:var(--muted);">
+        <span>AGENTS.md / CLAUDE.md</span>
+        <span>RAG / embeddings</span>
+        <span>Skills (docs + instructions)</span>
       </div>
     </div>
 
-    <div class="card" style="padding: 32px 28px; border-color: var(--purple); background: hsl(251 40% 54% / 0.06);">
-      <div style="font-size: 2.4rem; margin-bottom: 16px;">⚡</div>
+    <div class="card" style="padding: 32px 28px; border-color: hsl(251 40% 54% / 0.4); background: hsl(251 40% 54% / 0.06);">
+      <div style="font-size: 2.2rem; margin-bottom: 14px;">&#9889;</div>
       <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--purple); margin-bottom:12px;">Cognition</div>
-      <p style="font-size:1.5rem; font-weight:800; line-height:1.1; margin-bottom:20px; color:var(--purple);">Reasoning<br>&amp; Planning</p>
-      <div style="display:flex; flex-direction:column; gap:6px; font-size:0.8rem; font-family:'JetBrains Mono',monospace;">
-        <span style="color:var(--muted);">Claude / GPT / Gemini</span>
-        <span style="color:var(--muted);">chain-of-thought</span>
-        <span style="color:var(--muted);">tool-use, planning</span>
+      <p style="font-size:1.3rem; font-weight:700; line-height:1.2; margin-bottom:16px; color:var(--purple);">Reasoning<br>&amp; Planning</p>
+      <div style="display:flex; flex-direction:column; gap:5px; font-size:0.78rem; font-family:'JetBrains Mono',monospace; color:var(--muted);">
+        <span>Claude / GPT / Gemini</span>
+        <span>chain-of-thought</span>
+        <span>tool-use, planning</span>
       </div>
     </div>
 
     <div class="card" style="padding: 32px 28px; border-color: var(--accent-mid); background: var(--accent-dim);">
-      <div style="font-size: 2.4rem; margin-bottom: 16px;">🔧</div>
+      <div style="font-size: 2.2rem; margin-bottom: 14px;">&#128295;</div>
       <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Action</div>
-      <p style="font-size:1.5rem; font-weight:800; line-height:1.1; margin-bottom:20px; color:var(--accent);">Tools<br>&amp; Execution</p>
-      <div style="display:flex; flex-direction:column; gap:6px; font-size:0.8rem; font-family:'JetBrains Mono',monospace;">
-        <span style="color:var(--accent);">MCP (JSON-RPC)</span>
-        <span style="color:var(--accent);">CLI / bash</span>
-        <span style="color:var(--accent);">APIs &amp; services</span>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ─────────────────────────────────────────
-     4 · WHAT IS A SKILL (progressive)
-───────────────────────────────────────── -->
-<section class="slide" id="slide-4" data-steps="3">
-  <div class="logo-mark">Enact</div>
-  <div class="slide-number">04 / 16</div>
-
-  <div class="eyebrow">Skills</div>
-  <h2>What is a <span class="accent">Skill?</span></h2>
-
-  <div style="margin-top: 44px; display: flex; flex-direction: column; gap: 24px; max-width: 820px;">
-
-    <div class="reveal-step" data-step="1" style="display:flex; gap: 28px; align-items: flex-start;">
-      <div style="flex-shrink:0; width:48px; height:48px; border-radius:10px;
-                  background: var(--accent-dim); border: 1px solid var(--accent-mid);
-                  display:flex; align-items:center; justify-content:center;
-                  font-family:'JetBrains Mono',monospace; font-size:1rem; color:var(--accent); font-weight:700;">1</div>
-      <div>
-        <h3 style="margin-bottom:6px;">A <span class="accent">folder</span> — the minimum unit of capability</h3>
-        <p style="font-size:0.95rem; color:var(--muted); line-height:1.7;">
-          At its core, a skill is just a folder containing a <span class="mono accent">SKILL.md</span> file.
-          That's it. No framework, no build step, no runtime required at minimum.
-        </p>
-      </div>
-    </div>
-
-    <div class="reveal-step" data-step="2" style="display:flex; gap: 28px; align-items: flex-start;">
-      <div style="flex-shrink:0; width:48px; height:48px; border-radius:10px;
-                  background: hsl(210 70% 51% / 0.1); border: 1px solid hsl(210 70% 51% / 0.3);
-                  display:flex; align-items:center; justify-content:center;
-                  font-family:'JetBrains Mono',monospace; font-size:1rem; color:var(--blue); font-weight:700;">2</div>
-      <div>
-        <h3 style="margin-bottom:6px;"><span class="mono blue">SKILL.md</span> — instructions written for the agent</h3>
-        <p style="font-size:0.95rem; color:var(--muted); line-height:1.7;">
-          YAML frontmatter (<span class="mono">name</span>, <span class="mono">description</span>) is <em>always loaded</em> — just enough for the agent to know when the skill is relevant.
-          The body loads only when the skill is needed. Minimises token usage while keeping expertise on tap.
-        </p>
-      </div>
-    </div>
-
-    <div class="reveal-step" data-step="3" style="display:flex; gap: 28px; align-items: flex-start;">
-      <div style="flex-shrink:0; width:48px; height:48px; border-radius:10px;
-                  background: hsl(251 40% 54% / 0.1); border: 1px solid hsl(251 40% 54% / 0.3);
-                  display:flex; align-items:center; justify-content:center;
-                  font-family:'JetBrains Mono',monospace; font-size:1rem; color:var(--purple); font-weight:700;">3</div>
-      <div>
-        <h3 style="margin-bottom:6px;"><span class="purple">Progressive disclosure</span> — three levels, loaded on demand</h3>
-        <p style="font-size:0.95rem; color:var(--muted); line-height:1.7;">
-          Frontmatter → SKILL.md body → linked files (<span class="mono">scripts/</span>, <span class="mono">references/</span>, <span class="mono">assets/</span>).
-          Each level loads only when needed. Skills stay lightweight until the agent actually uses them.
-        </p>
+      <p style="font-size:1.3rem; font-weight:700; line-height:1.2; margin-bottom:16px; color:var(--accent);">Tools<br>&amp; Execution</p>
+      <div style="display:flex; flex-direction:column; gap:5px; font-size:0.78rem; font-family:'JetBrains Mono',monospace; color:var(--accent);">
+        <span>MCP (JSON-RPC)</span>
+        <span>CLI / bash</span>
+        <span>APIs &amp; services</span>
       </div>
     </div>
 
@@ -532,190 +439,200 @@
 
 
 <!-- ─────────────────────────────────────────
-     5 · SKILL.md EXAMPLE
+     4 · WHAT IS A SKILL
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-5" data-steps="2">
+<section class="slide" id="slide-4">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">05 / 16</div>
+  <div class="slide-number">04 / 13</div>
 
   <div class="eyebrow">Skills</div>
-  <h2>Inside a <span class="accent">SKILL.md</span></h2>
+  <h2>A skill is a <span class="accent">folder</span></h2>
 
-  <div style="margin-top: 32px;" class="cols">
-    <!-- LEFT: code that builds up progressively -->
+  <div style="margin-top: 36px;" class="cols">
     <div>
-      <div class="code-block" style="font-size:0.78rem; line-height:1.7;">
-<!-- always visible: frontmatter --><span class="c">---</span>
+      <!-- Level 1: frontmatter — always visible -->
+      <div class="code-block" style="font-size:0.78rem; line-height:1.7;"><span class="c">---</span>
 <span class="k">name</span>: <span class="s">wallet-lookup</span>
-<span class="k">description</span>: <span class="s">Look up on-chain wallet balance,</span>
-<span class="s">  transaction history, and token holdings.</span>
-<span class="s">  Use when user asks to "check a wallet",</span>
-<span class="s">  "look up an address", or "show transactions".</span>
+<span class="k">description</span>: <span class="s">Look up on-chain wallet balance</span>
+<span class="s">  and transaction history.</span>
 <span class="k">metadata</span>:
   <span class="n">author</span>: <span class="s">chaindata</span>
   <span class="n">version</span>: <span class="s">1.0.0</span>
 <span class="c">---</span>
-<!-- reveal group 1: SKILL.md body --><div class="reveal-step" data-reveal-group="1" style="display:block; margin:0; padding:0;">
+<!-- Level 2: SKILL.md body — reveals with group 1 --><div class="reveal-step" data-reveal-group="1" style="display:block; margin:0; padding:0;">
 <span class="k"># Wallet Lookup</span>
 
-<span class="c">## Instructions</span>
+<span class="n">### Step 1</span> — Extract the 0x address
+<span class="n">### Step 2</span> — <span class="s">python scripts/lookup.py --address ADDR</span>
+<span class="n">### Step 3</span> — Summarise: balance, tokens, activity</div></div>
 
-<span class="n">### Step 1: Identify the address</span>
-Extract address from user message.
-Valid EVM address: starts with `0x`, 42 chars.
-If missing, ask the user for one.
-
-<span class="n">### Step 2: Run the lookup</span>
-<span class="s">  python scripts/lookup.py --address ADDR</span>
-
-<span class="n">### Step 3: Summarise</span>
-Lead with ETH balance, then notable tokens,
-then recent activity.
-
-<span class="c">## Examples</span>
-User: "Check balance on 0xd8dA...?"
-→ run lookup, return balance + top tokens
-</div>
-      </div>
-
-      <!-- reveal group 2: linked files -->
+      <!-- Level 3: linked files — reveals with group 2 -->
       <div class="reveal-step" data-reveal-group="2" style="margin-top:10px; padding:12px 16px; border-radius:8px; background:var(--surface-2); border:1px solid hsl(251 40% 54% / 0.35); font-family:'JetBrains Mono',monospace; font-size:0.78rem; line-height:1.8;">
-        <span style="color:var(--purple)">scripts/</span>   <span style="color:var(--muted)">← executable code, loaded on demand</span><br>
-        <span style="color:var(--purple)">references/</span> <span style="color:var(--muted)">← docs &amp; API guides, loaded on demand</span><br>
-        <span style="color:var(--purple)">assets/</span>     <span style="color:var(--muted)">← templates &amp; icons, loaded on demand</span>
+        <span style="color:var(--purple)">scripts/</span>   <span style="color:var(--muted)">← code, loaded on demand</span><br>
+        <span style="color:var(--purple)">references/</span> <span style="color:var(--muted)">← docs, loaded on demand</span>
       </div>
     </div>
 
-    <!-- RIGHT: annotation cards that reveal in sync -->
     <div style="display:flex; flex-direction:column; gap:16px;">
-
-      <!-- level 1: always visible -->
+      <!-- Level 1 card — always visible -->
       <div class="card" style="border-color: var(--accent-mid);">
-        <div class="label">Level 1 — always in context</div>
-        <p style="font-size:0.88rem; color:var(--muted); margin-top:6px; line-height:1.6;">
-          The <strong>YAML frontmatter</strong> is always loaded. Just enough for the agent to know <em>when</em> this skill applies — without pulling in anything else.
+        <div class="label">Level 1 — always loaded</div>
+        <p style="font-size:0.9rem; color:var(--muted); line-height:1.6;">
+          YAML frontmatter. Tells the agent <em>when</em> this skill applies.
         </p>
       </div>
-
-      <!-- level 2: reveals with group 1 -->
+      <!-- Level 2 card — reveals with group 1 -->
       <div class="reveal-step card" data-reveal-group="1" style="border-color: hsl(210 70% 51% / 0.4);">
         <div class="label" style="color:var(--blue)">Level 2 — loaded when relevant</div>
-        <p style="font-size:0.88rem; color:var(--muted); margin-top:6px; line-height:1.6;">
-          The <strong>SKILL.md body</strong> loads once the agent decides this skill is needed. Instructions, examples, error handling.
+        <p style="font-size:0.9rem; color:var(--muted); line-height:1.6;">
+          SKILL.md body. Step-by-step instructions, examples, guardrails.
         </p>
       </div>
-
-      <!-- level 3: reveals with group 2 -->
+      <!-- Level 3 card — reveals with group 2 -->
       <div class="reveal-step card" data-reveal-group="2" style="border-color: hsl(251 40% 54% / 0.4);">
         <div class="label" style="color:var(--purple)">Level 3 — fetched on demand</div>
-        <p style="font-size:0.88rem; color:var(--muted); margin-top:6px; line-height:1.6;">
-          <strong>Linked files</strong> load only if the agent navigates to them. Keeps the base context small; depth is always there when needed.
+        <p style="font-size:0.9rem; color:var(--muted); line-height:1.6;">
+          Scripts, references, assets. Only pulled when the agent needs them.
         </p>
       </div>
-
     </div>
   </div>
 </section>
 
 
 <!-- ─────────────────────────────────────────
-     6 · AGENTS.MD BENCHMARK
+     5 · BENCHMARK
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-6">
+<section class="slide" id="slide-5">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">06 / 16</div>
+  <div class="slide-number">05 / 13</div>
 
   <div class="eyebrow">Honest benchmark</div>
   <h2>AGENTS.md <span class="accent">outperforms skills</span></h2>
 
-  <p style="font-size:1rem; color:var(--muted); margin-top:16px; max-width:680px;">
-    Vercel's Next.js team evals, targeting APIs not yet in model training data.
-    <span class="mono" style="font-size:0.85em;">Source: Jude Gao, Jan 2026</span>
-  </p>
-
-  <div style="margin-top: 28px; max-width: 860px;">
+  <div style="margin-top: 40px; max-width: 620px;">
     <div style="border-radius:12px; overflow:hidden; border:1px solid var(--border);">
-      <table style="width:100%; border-collapse:collapse; font-family:'JetBrains Mono',monospace; font-size:1rem;">
+      <table style="width:100%; border-collapse:collapse; font-family:'JetBrains Mono',monospace; font-size:0.95rem;">
         <thead>
           <tr style="background:var(--surface-2);">
-            <th style="padding:14px 24px; text-align:left; font-weight:600; color:var(--muted); border-bottom:1px solid var(--border);">Configuration</th>
-            <th style="padding:14px 24px; text-align:center; font-weight:600; color:var(--muted); border-bottom:1px solid var(--border);">Pass rate</th>
-            <th style="padding:14px 24px; text-align:center; font-weight:600; color:var(--muted); border-bottom:1px solid var(--border);">vs baseline</th>
+            <th style="padding:14px 22px; text-align:left; font-weight:600; color:var(--muted); border-bottom:1px solid var(--border);">Configuration</th>
+            <th style="padding:14px 22px; text-align:center; font-weight:600; color:var(--muted); border-bottom:1px solid var(--border);">Pass rate</th>
+            <th style="padding:14px 22px; text-align:center; font-weight:600; color:var(--muted); border-bottom:1px solid var(--border);">vs baseline</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom:1px solid var(--border); background:var(--surface);">
-            <td style="padding:16px 24px; color:var(--muted);">Baseline — no docs</td>
-            <td style="padding:16px 24px; text-align:center; font-size:1.15rem; font-weight:600;">53%</td>
-            <td style="padding:16px 24px; text-align:center; color:var(--muted);">—</td>
+            <td style="padding:14px 22px; color:var(--muted);">Baseline &mdash; no docs</td>
+            <td style="padding:14px 22px; text-align:center; font-weight:600;">53%</td>
+            <td style="padding:14px 22px; text-align:center; color:var(--muted);">&mdash;</td>
           </tr>
           <tr style="border-bottom:1px solid var(--border); background:var(--surface);">
-            <td style="padding:16px 24px; color:var(--muted);">Skill — default (no trigger instruction)</td>
-            <td style="padding:16px 24px; text-align:center; font-size:1.15rem; font-weight:600;">53%</td>
-            <td style="padding:16px 24px; text-align:center; color:var(--muted);">+0 pp</td>
+            <td style="padding:14px 22px; color:var(--muted);">Skill &mdash; default (no trigger instruction)</td>
+            <td style="padding:14px 22px; text-align:center; font-weight:600;">53%</td>
+            <td style="padding:14px 22px; text-align:center; color:var(--muted);">+0 pp</td>
           </tr>
           <tr style="border-bottom:1px solid var(--border); background:var(--surface);">
-            <td style="padding:16px 24px; color:var(--muted);">Skill + explicit trigger instruction</td>
-            <td style="padding:16px 24px; text-align:center; font-size:1.15rem; font-weight:600; color:var(--gold);">79%</td>
-            <td style="padding:16px 24px; text-align:center; color:var(--gold); font-weight:600;">+26 pp</td>
+            <td style="padding:14px 22px; color:var(--gold);">Skill + explicit trigger instruction</td>
+            <td style="padding:14px 22px; text-align:center; font-size:1.1rem; font-weight:600; color:var(--gold);">79%</td>
+            <td style="padding:14px 22px; text-align:center; color:var(--gold); font-weight:600;">+26 pp</td>
           </tr>
           <tr style="background: hsl(150 60% 50% / 0.06); border-top: 1px solid hsl(150 60% 50% / 0.3);">
-            <td style="padding:20px 24px; font-weight:700; font-size:1.05rem;">AGENTS.md — 8 KB compressed docs index</td>
-            <td style="padding:20px 24px; text-align:center; font-size:1.6rem; font-weight:800; color:var(--green);">100%</td>
-            <td style="padding:20px 24px; text-align:center; font-size:1.15rem; font-weight:700; color:var(--green);">+47 pp</td>
+            <td style="padding:18px 22px; font-weight:700; font-size:1.05rem;">AGENTS.md &mdash; 8 KB compressed docs index</td>
+            <td style="padding:18px 22px; text-align:center; font-size:1.5rem; font-weight:800; color:var(--green);">100%</td>
+            <td style="padding:18px 22px; text-align:center; font-size:1.1rem; font-weight:700; color:var(--green);">+47 pp</td>
           </tr>
         </tbody>
       </table>
     </div>
+    <p style="font-size:0.78rem; color:var(--muted); margin-top:12px; font-family:'JetBrains Mono',monospace;">
+      Vercel Next.js evals, targeting APIs not in training data &mdash; Jude Gao, Jan 2026
+    </p>
   </div>
 
-  <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+  <div style="margin-top: 28px; display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
     <span class="tag tag-muted">56% of runs: skill never invoked</span>
   </div>
+
+  <p style="margin-top: 28px; font-size:1.1rem; color: var(--muted); max-width: 600px;">
+    So why bother with skills at all?
+  </p>
 </section>
 
 
 <!-- ─────────────────────────────────────────
-     7 · WHY SKILLS
+     6 · BUT SKILLS WIN
+───────────────────────────────────────── -->
+<section class="slide" id="slide-6">
+  <div class="logo-mark">Enact</div>
+  <div class="slide-number">06 / 13</div>
+
+  <div class="eyebrow">The case for skills</div>
+  <h2>Skills win <span class="accent">everywhere else</span></h2>
+
+  <div style="margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px;">
+
+    <div class="card" style="border-color: var(--accent-mid); background: var(--accent-dim);">
+      <p style="font-size:1.15rem; font-weight:700; margin-bottom:10px;">Dynamic discovery</p>
+      <p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">AGENTS.md is static &mdash; fixed at session start. Skills can be searched from a registry at runtime.</p>
+    </div>
+    <div class="card">
+      <p style="font-size:1.15rem; font-weight:700; margin-bottom:10px;">Executable code</p>
+      <p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">AGENTS.md is documentation. A skill can run a migration, call an API, or build a container.</p>
+    </div>
+    <div class="card">
+      <p style="font-size:1.15rem; font-weight:700; margin-bottom:10px;">Packaged &amp; versioned</p>
+      <p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">One skill = one capability. Named, composable, auditable. A flat file loses all that structure.</p>
+    </div>
+    <div class="card">
+      <p style="font-size:1.15rem; font-weight:700; margin-bottom:10px;">Portable across agents</p>
+      <p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">AGENTS.md lives in one repo. Skills work with Claude, GPT, Cursor, Copilot &mdash; any agent that speaks MCP.</p>
+    </div>
+
+  </div>
+
+  <p style="margin-top: 36px; font-size:1.05rem; color: var(--muted); max-width: 640px;">
+    What skills need is infrastructure that <strong class="accent">accentuates</strong> these strengths.
+  </p>
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     7 · INTRODUCING ENACT
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-7">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">07 / 16</div>
+  <div class="slide-number">07 / 13</div>
 
-  <div class="eyebrow">Skills</div>
-  <h2>Why <span class="accent">Skills?</span></h2>
+  <div class="eyebrow">Introducing Enact</div>
+  <h2>What Enact <span class="accent">adds to a skill</span></h2>
 
-  <div style="margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 960px;">
+  <p style="margin-top: 16px; font-size:1.05rem; color: var(--muted); max-width: 640px;">
+    A skill is a folder. Enact turns it into something an agent can find, trust, and run.
+  </p>
 
-    <div class="card" style="padding: 28px 32px; border-color: var(--accent-mid); background: var(--accent-dim);">
-      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:16px;">Dynamic discovery</div>
-      <p style="font-size:1.3rem; font-weight:700; line-height:1.2; margin-bottom:16px;">Agents find what they need at runtime</p>
-      <p style="font-size:0.9rem; color:var(--muted); line-height:1.65;">
-        AGENTS.md is fixed at session start. Skills can be <strong>semantically searched</strong> from a large index — the agent pulls in exactly the right capability for the task at hand.
+  <div style="margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; max-width: 1000px;">
+
+    <div class="card" style="padding: 32px 28px; border-color: var(--accent-mid); background: var(--accent-dim);">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:16px;">Runtime</div>
+      <p style="font-size:1.3rem; font-weight:700; line-height:1.2; margin-bottom:14px;">Package &amp; execute</p>
+      <p style="font-size:0.85rem; color:var(--muted); line-height:1.6;">
+        Build hooks, isolated containers, secret injection. Skills run safely without the agent managing infrastructure.
       </p>
     </div>
 
-    <div class="card" style="padding: 28px 32px;">
-      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-bottom:16px;">More than docs</div>
-      <p style="font-size:1.3rem; font-weight:700; line-height:1.2; margin-bottom:16px;">Skills contain executable code</p>
-      <p style="font-size:0.9rem; color:var(--muted); line-height:1.65;">
-        Not just instructions — actual scripts, build steps, secrets handling. An AGENTS.md can't run a database migration. A skill can.
+    <div class="card" style="padding: 32px 28px; border-color: hsl(210 70% 51% / 0.4); background: hsl(210 70% 51% / 0.06);">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--blue); margin-bottom:16px;">Registry</div>
+      <p style="font-size:1.3rem; font-weight:700; line-height:1.2; margin-bottom:14px;">Search &amp; discover</p>
+      <p style="font-size:0.85rem; color:var(--muted); line-height:1.6;">
+        Agents find skills by capability, not by name. Semantic search over a central index via MCP.
       </p>
     </div>
 
-    <div class="card" style="padding: 28px 32px;">
-      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-bottom:16px;">Conceptual grouping</div>
-      <p style="font-size:1.3rem; font-weight:700; line-height:1.2; margin-bottom:16px;">Packaged, versioned, named</p>
-      <p style="font-size:0.9rem; color:var(--muted); line-height:1.65;">
-        One skill = one capability. Discoverable, composable, auditable. A flat AGENTS.md with embedded scripts loses all of that structure.
-      </p>
-    </div>
-
-    <div class="card" style="padding: 28px 32px; border-color: var(--accent-mid); background: var(--accent-dim);">
-      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:16px;">Vertical workflows</div>
-      <p style="font-size:1.3rem; font-weight:700; line-height:1.2; margin-bottom:16px;">Purpose-built for one job</p>
-      <p style="font-size:0.9rem; color:var(--muted); line-height:1.65;">
-        Skills shine for explicit, repeatable tasks: migrate this API, scan this contract, query this database. Triggered by need, not always loaded.
+    <div class="card" style="padding: 32px 28px; border-color: hsl(150 60% 50% / 0.4); background: hsl(150 60% 50% / 0.06);">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--green); margin-bottom:16px;">Security</div>
+      <p style="font-size:1.3rem; font-weight:700; line-height:1.2; margin-bottom:14px;">Sign &amp; verify</p>
+      <p style="font-size:0.85rem; color:var(--muted); line-height:1.6;">
+        Sigstore signing, Rekor transparency log, trust tiers. Every skill has a verifiable identity.
       </p>
     </div>
 
@@ -724,50 +641,21 @@ User: "Check balance on 0xd8dA...?"
 
 
 <!-- ─────────────────────────────────────────
-     9 · SKILLS PACKAGES
+     8 · SKILL PACKAGE FILE
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-8">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">08 / 16</div>
+  <div class="slide-number">08 / 13</div>
 
-  <div class="eyebrow">Skills</div>
-  <h2>Capabilities, <span class="accent">packaged for agents</span></h2>
+  <div class="eyebrow">Packaging</div>
+  <h2>The <span class="accent">skill.package.yml</span></h2>
 
   <div style="margin-top: 36px;" class="cols">
-    <div>
-      <p style="font-size:1rem; color: var(--muted); margin-bottom: 24px;">
-        An <strong>Enact skill package</strong> extends the base Skill format with a runtime manifest
-        and implementation code. Still no special framework required.
-      </p>
-
-      <div class="card" style="margin-bottom: 14px;">
-        <div class="label">SKILL.md</div>
-        <p style="font-size:0.9rem; color: var(--muted);">
-          Plain markdown written <em>for the agent</em>.
-          Teaches it what the skill does, what inputs to pass, what to expect back.
-        </p>
-      </div>
-      <div class="card" style="margin-bottom: 14px;">
-        <div class="label">skill.package.yml</div>
-        <p style="font-size:0.9rem; color: var(--muted);">
-          Runtime manifest: name, version, scripts, build hooks, secrets, and execution backend.
-        </p>
-      </div>
-      <div class="card">
-        <div class="label">code/</div>
-        <p style="font-size:0.9rem; color: var(--muted);">
-          Anything from a small script to a full application.
-          Enact builds, signs, and runs it — locally, in Docker, or remotely.
-        </p>
-      </div>
-    </div>
-
     <div>
       <div class="code-block"><span class="c"># skill.package.yml</span>
 <span class="k">enact</span>: <span class="s">"2.0.0"</span>
 <span class="k">name</span>: <span class="s">chaindata/wallet-lookup</span>
 <span class="k">version</span>: <span class="s">"1.2.0"</span>
-<span class="k">description</span>: <span class="s">Look up on-chain wallet balance and history</span>
 <span class="k">from</span>: <span class="s">python:3.12-slim</span>
 
 <span class="k">hooks</span>:
@@ -779,115 +667,70 @@ User: "Check balance on 0xd8dA...?"
     <span class="n">secret</span>: <span class="s">true</span>
 
 <span class="k">scripts</span>:
-  <span class="n">lookup</span>: <span class="s">"python wallet.py {{address}}"</span>
-</div>
+  <span class="n">lookup</span>: <span class="s">"python wallet.py {{address}}"</span></div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div class="card">
+        <div class="label">SKILL.md</div>
+        <p style="font-size:0.9rem; color: var(--muted);">
+          Instructions written <em>for the agent</em>. What to pass, what to expect back.
+        </p>
+      </div>
+      <div class="card">
+        <div class="label">skill.package.yml</div>
+        <p style="font-size:0.9rem; color: var(--muted);">
+          Runtime manifest. Build hooks, secrets, execution backend.
+        </p>
+      </div>
+      <div class="card">
+        <div class="label">code/</div>
+        <p style="font-size:0.9rem; color: var(--muted);">
+          Anything from a script to a full app. Enact builds, signs, and runs it.
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
 
 <!-- ─────────────────────────────────────────
-     10 · SKILLS INTRO (on demand)
+     9 · THE TRUST PROBLEM
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-9">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">09 / 16</div>
-
-  <div class="eyebrow">Skills</div>
-  <h2>Capabilities, <span class="accent">on demand</span></h2>
-
-  <div style="margin-top: 40px;" class="cols">
-    <div>
-      <p style="font-size:1.05rem; color: var(--muted); margin-bottom: 28px;">
-        Agents shouldn't ship with every tool preinstalled.<br>
-        They should acquire capabilities <strong>when they need them</strong>.
-      </p>
-
-      <div class="steps">
-        <li>
-          <div class="step-num">1</div>
-          <div>
-            <strong>Search</strong>
-            <span class="dim" style="font-size:0.9rem; display:block;">Agent describes what it needs. Registry returns matching skills.</span>
-          </div>
-        </li>
-        <li>
-          <div class="step-num">2</div>
-          <div>
-            <strong>Learn</strong>
-            <span class="dim" style="font-size:0.9rem; display:block;"><code>SKILL.md</code> is injected into context. Agent reads docs, understands inputs.</span>
-          </div>
-        </li>
-        <li>
-          <div class="step-num">3</div>
-          <div>
-            <strong>Run</strong>
-            <span class="dim" style="font-size:0.9rem; display:block;">Agent calls the skill. Enact governs execution. Result returned.</span>
-          </div>
-        </li>
-      </div>
-    </div>
-
-    <div>
-      <div class="card" style="margin-bottom: 16px; border-color: var(--accent);">
-        <div class="label">The insight</div>
-        <p style="font-size: 1rem; line-height: 1.7;">
-          Traditional software ships with its dependencies baked in.<br><br>
-          Agent software discovers and executes capabilities at runtime —
-          like calling an API, not importing a library.
-        </p>
-      </div>
-
-      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;">
-        <span class="tag tag-accent">dynamic discovery</span>
-        <span class="tag tag-blue">no preinstall</span>
-        <span class="tag tag-purple">runtime composition</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ─────────────────────────────────────────
-     7 · THE PROBLEM
-───────────────────────────────────────── -->
-<section class="slide" id="slide-10">
-  <div class="logo-mark">Enact</div>
-  <div class="slide-number">10 / 16</div>
+  <div class="slide-number">09 / 13</div>
 
   <div class="eyebrow">The problem</div>
   <h2>Skills exist. <span class="accent">Trust doesn't.</span></h2>
 
-  <div style="margin-top: 40px;" class="cols-3">
+  <div style="margin-top: 44px;" class="cols-3">
     <div class="card">
       <div class="label">Discovery</div>
-      <h3 style="margin-bottom: 10px;">Skills are scattered</h3>
-      <p style="font-size:0.88rem; color: var(--muted);">
-        GitHub repos, npm packages, random blog posts. There's no central place to find
-        a skill for a given task.
+      <h3 style="margin-bottom: 10px;">Scattered everywhere</h3>
+      <p style="font-size:0.85rem; color: var(--muted);">
+        GitHub repos, npm, blog posts. No central index.
       </p>
     </div>
 
     <div class="card">
-      <div class="label">Trust</div>
+      <div class="label">Identity</div>
       <h3 style="margin-bottom: 10px;">Who published this?</h3>
-      <p style="font-size:0.88rem; color: var(--muted);">
-        No verification. No signing. The code running inside your agent's tool call
-        could be anything.
+      <p style="font-size:0.85rem; color: var(--muted);">
+        No signing. No verification. Could be anything.
       </p>
     </div>
 
     <div class="card">
       <div class="label">Provenance</div>
-      <h3 style="margin-bottom: 10px;">What changed in v1.1?</h3>
-      <p style="font-size:0.88rem; color: var(--muted);">
-        No audit trail. No transparency log. No way to prove a published version hasn't
-        been tampered with.
+      <h3 style="margin-bottom: 10px;">Has it been tampered?</h3>
+      <p style="font-size:0.85rem; color: var(--muted);">
+        No audit trail. No transparency log.
       </p>
     </div>
   </div>
 
-  <div style="margin-top: 40px;">
+  <div style="margin-top: 44px;">
     <div class="blockquote">
       "You wouldn't <code>curl | bash</code> from a random URL.<br>
       Why would you let your agent do it?"
@@ -897,82 +740,80 @@ User: "Check balance on 0xd8dA...?"
 
 
 <!-- ─────────────────────────────────────────
-     8 · ENACT
+     10 · ENACT + SIGSTORE
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-11">
+<section class="slide" id="slide-10">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">11 / 16</div>
+  <div class="slide-number">10 / 13</div>
 
   <div class="eyebrow">The solution</div>
-  <h2>Enact — a <span class="accent">runtime and registry</span> for agent skills</h2>
+  <h2>Enact — <span class="accent">signed registry</span> for agent skills</h2>
 
   <div style="margin-top: 36px;" class="cols">
     <div>
+      <div class="flow" style="margin-bottom: 28px;">
+        <div class="flow-node">Publish<small>OIDC identity</small></div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-node">Sigstore<small>keyless sign</small></div>
+        <div class="flow-arrow">&rarr;</div>
+        <div class="flow-node active">Rekor<small>transparency log</small></div>
+      </div>
+
       <div class="steps">
         <li>
           <div class="step-num">1</div>
           <div>
-            <strong>Publish</strong>
-            <span class="dim" style="font-size:0.9rem; display:block;">
-              Push a skill. Enact builds it, signs it with Sigstore, logs to Rekor.
-            </span>
+            <strong>Publish</strong> — push a skill. Enact builds and signs it.
           </div>
         </li>
         <li>
           <div class="step-num">2</div>
           <div>
-            <strong>Discover</strong>
-            <span class="dim" style="font-size:0.9rem; display:block;">
-              Agent calls <code>enact_search</code> via MCP. Finds skills by capability, not by name.
-            </span>
+            <strong>Discover</strong> — agents search by capability via MCP.
           </div>
         </li>
         <li>
           <div class="step-num">3</div>
           <div>
-            <strong>Govern</strong>
-            <span class="dim" style="font-size:0.9rem; display:block;">
-              The runtime verifies signatures, enforces trust policy, selects backend
-              (local / Docker / remote), and injects secrets — before execution.
-            </span>
+            <strong>Verify</strong> — signatures checked, log entry confirmed.
           </div>
         </li>
         <li>
           <div class="step-num">4</div>
           <div>
-            <strong>Run</strong>
-            <span class="dim" style="font-size:0.9rem; display:block;">
-              Isolated execution. The agent never sees secrets. The model decides what to run;
-              Enact decides <em>whether and how</em>.
-            </span>
+            <strong>Run</strong> — isolated execution. Secrets injected, never exposed.
           </div>
         </li>
       </div>
     </div>
 
     <div>
-      <div style="margin-bottom: 20px;" class="flow" style="flex-wrap:wrap;">
-        <div class="flow-node">Publisher<small>OIDC identity</small></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-node">Sigstore<small>cosign sign</small></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-node active">Rekor<small>transparency log</small></div>
+      <div class="card" style="margin-bottom: 16px; border-color: var(--accent);">
+        <div class="label">Sigstore — Let's Encrypt for code signing</div>
+        <p style="font-size:0.9rem; color: var(--muted); line-height: 1.7; margin-top: 6px;">
+          Keyless signing via OIDC identity (GitHub, Google). Short-lived certs. Every signature recorded in an immutable transparency log.
+        </p>
+        <div style="margin-top: 12px;">
+          <span class="tag tag-green">open source</span>
+          <span class="tag tag-blue">Linux Foundation</span>
+          <span class="tag tag-muted">npm, PyPI, K8s</span>
+        </div>
       </div>
 
-      <div class="card" style="margin-top: 20px;">
+      <div class="card">
         <div class="label">Trust tiers</div>
         <div style="display:flex; flex-direction:column; gap:10px; margin-top:8px;">
           <div style="display:flex; align-items:center; gap:12px;">
-            <span style="color: var(--gold); font-size: 1.1rem;">✦</span>
-            <span><strong>Official</strong> <span class="dim" style="font-size:0.85rem;">— Enact-maintained first-party skills</span></span>
+            <span style="color: var(--gold); font-size: 1.1rem;">&#10022;</span>
+            <span><strong>Official</strong> <span class="dim" style="font-size:0.85rem;">— Enact first-party</span></span>
           </div>
           <div style="display:flex; align-items:center; gap:12px;">
-            <span style="color: var(--green); font-size: 1.1rem;">✓</span>
-            <span><strong>Verified Publisher</strong> <span class="dim" style="font-size:0.85rem;">— identity confirmed, signing enforced</span></span>
+            <span style="color: var(--green); font-size: 1.1rem;">&#10003;</span>
+            <span><strong>Verified</strong> <span class="dim" style="font-size:0.85rem;">— identity confirmed, signing enforced</span></span>
           </div>
           <div style="display:flex; align-items:center; gap:12px;">
-            <span style="color: var(--muted); font-size: 1.1rem;">○</span>
-            <span><strong>Community</strong> <span class="dim" style="font-size:0.85rem;">— open submissions, use at own risk</span></span>
+            <span style="color: var(--muted); font-size: 1.1rem;">&#9675;</span>
+            <span><strong>Community</strong> <span class="dim" style="font-size:0.85rem;">— open, use at own risk</span></span>
           </div>
         </div>
       </div>
@@ -982,122 +823,30 @@ User: "Check balance on 0xd8dA...?"
 
 
 <!-- ─────────────────────────────────────────
-     9b · SIGSTORE
+     11 · UNDER THE HOOD
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-12">
+<section class="slide" id="slide-11">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">12 / 16</div>
-
-  <div class="eyebrow">Trust infrastructure</div>
-  <h2>Sigstore — <span class="accent">identity-based signing</span> for the supply chain</h2>
-
-  <div style="margin-top: 36px;" class="cols">
-    <div>
-      <p style="font-size:1rem; color: var(--muted); margin-bottom: 24px;">
-        Sigstore is an open-source project that makes code signing <strong>keyless</strong>.
-        No PGP keys to manage, no certificates to rotate. Publishers prove who they are
-        with an identity they already have.
-      </p>
-
-      <div class="steps">
-        <li>
-          <div class="step-num">1</div>
-          <div>
-            <strong>Cosign</strong>
-            <span class="dim" style="font-size:0.88rem; display:block;">
-              Signs artifacts using OIDC identity (GitHub, Google, etc). Short-lived keys generated per signing event — nothing to manage.
-            </span>
-          </div>
-        </li>
-        <li>
-          <div class="step-num">2</div>
-          <div>
-            <strong>Fulcio</strong>
-            <span class="dim" style="font-size:0.88rem; display:block;">
-              A certificate authority that issues short-lived certificates bound to an OIDC identity. Proves <em>who</em> signed.
-            </span>
-          </div>
-        </li>
-        <li>
-          <div class="step-num">3</div>
-          <div>
-            <strong>Rekor</strong>
-            <span class="dim" style="font-size:0.88rem; display:block;">
-              An immutable transparency log. Every signature is publicly recorded — you can prove a signature existed at a specific time.
-            </span>
-          </div>
-        </li>
-      </div>
-
-      <div style="margin-top: 24px;">
-        <span class="tag tag-green">open source</span>
-        <span class="tag tag-blue">Linux Foundation</span>
-        <span class="tag tag-muted">used by npm, PyPI, Kubernetes</span>
-      </div>
-    </div>
-
-    <div>
-      <div style="margin-bottom: 20px;" class="flow">
-        <div class="flow-node">Publisher<small>OIDC login</small></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-node">Fulcio<small>short-lived cert</small></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-node active">Cosign<small>sign artifact</small></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-node">Rekor<small>log entry</small></div>
-      </div>
-
-      <div class="card" style="margin-top: 20px; border-color: var(--accent);">
-        <div class="label">Why this matters for skills</div>
-        <p style="font-size:0.9rem; color: var(--muted); line-height: 1.7; margin-top: 6px;">
-          Traditional code signing requires developers to manage long-lived keys — most don't bother.
-          Sigstore removes the friction: log in, sign, done.
-        </p>
-        <p style="font-size:0.9rem; line-height: 1.7; margin-top: 12px;">
-          Every skill published to Enact gets a <strong>verifiable identity</strong> and a
-          <strong>tamper-evident log entry</strong> — automatically.
-        </p>
-      </div>
-
-      <div class="card" style="margin-top: 16px;">
-        <div class="label">The analogy</div>
-        <p style="font-size:0.9rem; line-height: 1.7; margin-top: 6px;">
-          Sigstore is to code signing what <strong>Let's Encrypt</strong> was to HTTPS —
-          it makes the secure path the easy path.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ─────────────────────────────────────────
-     10 · HOW IT WORKS (technical)
-───────────────────────────────────────── -->
-<section class="slide" id="slide-13">
-  <div class="logo-mark">Enact</div>
-  <div class="slide-number">13 / 16</div>
+  <div class="slide-number">11 / 13</div>
 
   <div class="eyebrow">Under the hood</div>
   <h2>What happens when an agent <span class="accent">calls a skill</span></h2>
 
   <div style="margin-top: 36px;" class="cols">
     <div>
-      <div class="code-block"><span class="c"># Agent discovers and runs a skill</span>
-<span class="prompt">$</span> <span class="cmd">enact install chaindata/wallet-lookup</span>
+      <div class="code-block"><span class="prompt">$</span> <span class="cmd">enact install chaindata/wallet-lookup</span>
 
-<span class="ok">✓ Fetched skill manifest</span>
-<span class="ok">✓ Verified Sigstore signature</span>
-<span class="ok">✓ Checked Rekor transparency log</span>
-<span class="ok">✓ Ready: chaindata/wallet-lookup@1.2.0</span>
+<span class="ok">&#10003; Verified Sigstore signature</span>
+<span class="ok">&#10003; Checked Rekor transparency log</span>
+<span class="ok">&#10003; Ready: chaindata/wallet-lookup@1.2.0</span>
 
 <span class="prompt">$</span> <span class="cmd">enact run chaindata/wallet-lookup:lookup \</span>
 <span class="cmd">    -a '{"address": "0xabc..."}'</span>
 
-<span class="ok">✓ Trust policy: enforce</span>
-<span class="ok">✓ Backend: docker</span>
-<span class="ok">✓ Secrets injected (CHAIN_API_KEY)</span>
-</div>
+<span class="ok">&#10003; Trust policy: enforce</span>
+<span class="ok">&#10003; Backend: docker</span>
+<span class="ok">&#10003; Secrets injected (CHAIN_API_KEY)</span>
+<span class="out">  (agent never saw the value)</span></div>
     </div>
 
     <div>
@@ -1105,37 +854,29 @@ User: "Check balance on 0xd8dA...?"
         <li>
           <div class="step-num">1</div>
           <div>
-            <strong>Manifest + docs fetched</strong>
-            <span class="dim" style="font-size:0.88rem; display:block;">
-              <code>skill.package.yml</code> + <code>SKILL.md</code> injected into agent context
-            </span>
+            <strong>Fetch</strong>
+            <span class="dim" style="font-size:0.88rem; display:block;">Manifest + SKILL.md injected into context</span>
           </div>
         </li>
         <li>
           <div class="step-num">2</div>
           <div>
-            <strong>Signature verified</strong>
-            <span class="dim" style="font-size:0.88rem; display:block;">
-              Cosign verifies the container digest against the publisher's OIDC identity
-            </span>
+            <strong>Verify</strong>
+            <span class="dim" style="font-size:0.88rem; display:block;">Cosign checks digest against publisher identity</span>
           </div>
         </li>
         <li>
           <div class="step-num">3</div>
           <div>
-            <strong>Log entry checked</strong>
-            <span class="dim" style="font-size:0.88rem; display:block;">
-              Rekor confirms the signature was recorded at publish time — not backdated
-            </span>
+            <strong>Isolate</strong>
+            <span class="dim" style="font-size:0.88rem; display:block;">Container runs with declared permissions only</span>
           </div>
         </li>
         <li>
           <div class="step-num">4</div>
           <div>
-            <strong>Isolated execution</strong>
-            <span class="dim" style="font-size:0.88rem; display:block;">
-              Container runs with declared permissions only. No silent network access.
-            </span>
+            <strong>Inject</strong>
+            <span class="dim" style="font-size:0.88rem; display:block;">Secrets from keystore &rarr; env vars. Never in logs, never in context.</span>
           </div>
         </li>
       </div>
@@ -1145,84 +886,16 @@ User: "Check balance on 0xd8dA...?"
 
 
 <!-- ─────────────────────────────────────────
-     11 · ENV / SECRETS
+     12 · DEMO
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-14">
+<section class="slide" id="slide-12">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">14 / 16</div>
-
-  <div class="eyebrow">Secrets &amp; environment</div>
-  <h2>Skills declare what they need.<br><span class="accent">Enact injects it.</span></h2>
-
-  <div style="margin-top: 36px;" class="cols">
-    <div>
-      <p style="font-size:1rem; color: var(--muted); margin-bottom: 24px;">
-        Secrets are declared in the manifest, registered once with the runtime,
-        and injected at execution time — never exposed to the agent or printed in logs.
-      </p>
-
-      <div class="steps">
-        <li>
-          <div class="step-num">1</div>
-          <div>
-            <strong>Declare in manifest</strong>
-            <span class="dim" style="font-size:0.88rem; display:block;">Mark env vars as <code>secret: true</code> in <code>skill.package.yml</code></span>
-          </div>
-        </li>
-        <li>
-          <div class="step-num">2</div>
-          <div>
-            <strong>Register once</strong>
-            <span class="dim" style="font-size:0.88rem; display:block;">Developer sets the value via CLI or config — stored in the Enact keystore</span>
-          </div>
-        </li>
-        <li>
-          <div class="step-num">3</div>
-          <div>
-            <strong>Injected at runtime</strong>
-            <span class="dim" style="font-size:0.88rem; display:block;">Skill sees a normal env variable. Agent never sees the value. Logs stay clean.</span>
-          </div>
-        </li>
-      </div>
-    </div>
-
-    <div>
-      <div class="code-block"><span class="c"># 1. Declare in skill.package.yml</span>
-<span class="k">env</span>:
-  <span class="n">FIRECRAWL_API_KEY</span>:
-    <span class="n">secret</span>: <span class="s">true</span>
-  <span class="n">BASE_URL</span>:
-    <span class="n">default</span>: <span class="s">"https://api.example.com"</span>
-
-<span class="c"># 2. Register the secret once</span>
-<span class="prompt">$</span> <span class="cmd">enact env set FIRECRAWL_API_KEY \</span>
-<span class="cmd">    fc-your-key --secret</span>
-
-<span class="ok">✓ Stored in Enact keystore</span>
-
-<span class="c"># 3. Run — secret injected automatically</span>
-<span class="prompt">$</span> <span class="cmd">enact run enact/firecrawl:scrape \</span>
-<span class="cmd">    -a '{"url": "https://example.com"}'</span>
-
-<span class="ok">✓ FIRECRAWL_API_KEY injected</span>
-<span class="out">  (agent never saw the value)</span>
-</div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ─────────────────────────────────────────
-     8 · DEMO
-───────────────────────────────────────── -->
-<section class="slide" id="slide-15">
-  <div class="logo-mark">Enact</div>
-  <div class="slide-number">15 / 16</div>
+  <div class="slide-number">12 / 13</div>
 
   <div class="eyebrow">Live demo</div>
   <h2>Let's <span class="accent">see it run</span></h2>
 
-  <div style="margin-top: 36px;" class="demo-terminal">
+  <div style="margin-top: 36px; max-width: 800px;" class="demo-terminal">
     <div class="demo-terminal-bar">
       <div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div>
       <span style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted); margin-left:10px;">enact — demo</span>
@@ -1230,117 +903,90 @@ User: "Check balance on 0xd8dA...?"
     <div class="demo-terminal-body">
 <span class="prompt">$</span> <span class="cmd">enact search "public records lookup"</span>
 <span class="out">
-  veridian/records-search  ✓ Verified   94k invocations/week
-  docuscan/person-search   ✓ Verified   12k invocations/week
-  community/record-finder  ○ Community  340 invocations/week
+  veridian/records-search  &#10003; Verified   94k/week
+  docuscan/person-search   &#10003; Verified   12k/week
+  community/record-finder  &#9675; Community  340/week
 </span>
 <span class="prompt">$</span> <span class="cmd">enact install veridian/records-search</span>
 <span class="ok">
-✓ Signature valid  (publisher: veridian-data@github.com)
-✓ Rekor log entry: rec_8f3a91bc
-✓ Installed → ready for agent use
+&#10003; Signature valid  (veridian-data@github.com)
+&#10003; Rekor log: rec_8f3a91bc
+&#10003; Installed
 </span>
 <span class="prompt">$</span> <span class="cmd">enact run veridian/records-search:search \</span>
 <span class="cmd">    -a '{"query": "Jane Doe, Austin TX"}'</span>
 <span class="out">
-  Trust policy: enforce  ✓
-  Backend: docker        ✓
-  Executing in isolation...
-</span><span class="ok">  → 3 records found</span>
+  Trust: enforce  &#10003;   Backend: docker  &#10003;
+</span><span class="ok">  &rarr; 3 records found</span>
     </div>
-  </div>
-
-  <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
-    <span class="tag tag-accent">live search</span>
-    <span class="tag tag-blue">signature verification</span>
-    <span class="tag tag-purple">agent tool call</span>
-    <span class="tag tag-green">isolated execution</span>
   </div>
 </section>
 
 
 <!-- ─────────────────────────────────────────
-     9 · GET INVOLVED
+     13 · CTA
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-16">
+<section class="slide" id="slide-13">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">16 / 16</div>
+  <div class="slide-number">13 / 13</div>
 
   <div class="eyebrow">Get involved</div>
   <h2>Build on the <span class="accent">skills layer</span></h2>
 
-  <div style="margin-top: 36px;" class="cols">
-    <div>
-      <div class="steps">
-        <li>
-          <div class="step-num">↗</div>
-          <div>
-            <strong>Publish a skill</strong>
-            <span class="dim" style="font-size:0.9rem; display:block;">
-              Got an API or data source? Package it as a skill and reach every agent that needs it.
-            </span>
-          </div>
-        </li>
-        <li>
-          <div class="step-num">↗</div>
-          <div>
-            <strong>Use the registry</strong>
-            <span class="dim" style="font-size:0.9rem; display:block;">
-              Import verified skills into your agent stack. Stop reinventing common capabilities.
-            </span>
-          </div>
-        </li>
-        <li>
-          <div class="step-num">↗</div>
-          <div>
-            <strong>Contribute</strong>
-            <span class="dim" style="font-size:0.9rem; display:block;">
-              The skill format and MCP bindings are open. PRs welcome.
-            </span>
-          </div>
-        </li>
-      </div>
-
-      <div style="margin-top: 36px;">
-        <div class="eyebrow" style="margin-bottom: 10px;">find us</div>
-        <p class="mono" style="font-size: 1rem; color: var(--muted);">
-          enact.tools<br>
-          @enactprotocol on GitHub
-        </p>
-      </div>
+  <div style="margin-top: 44px; max-width: 700px;">
+    <div class="steps">
+      <li>
+        <div class="step-num">&nearr;</div>
+        <div>
+          <strong>Publish a skill</strong>
+          <span class="dim" style="font-size:0.9rem; display:block;">Package your API or data source. Reach every agent.</span>
+        </div>
+      </li>
+      <li>
+        <div class="step-num">&nearr;</div>
+        <div>
+          <strong>Use the registry</strong>
+          <span class="dim" style="font-size:0.9rem; display:block;">Import verified skills. Stop reinventing capabilities.</span>
+        </div>
+      </li>
+      <li>
+        <div class="step-num">&nearr;</div>
+        <div>
+          <strong>Contribute</strong>
+          <span class="dim" style="font-size:0.9rem; display:block;">Skill format and MCP bindings are open. PRs welcome.</span>
+        </div>
+      </li>
     </div>
 
-    <div>
+    <div style="margin-top: 44px;">
       <div class="card" style="border-color: var(--accent);">
-        <div class="label">The bigger picture</div>
-        <p style="font-size: 1rem; line-height: 1.7; margin-bottom: 20px;">
+        <p style="font-size: 1.2rem; font-weight: 700; margin-bottom: 8px;">
           SaaS was software you click through.<br>
-          <strong>Skills are software agents act with.</strong>
+          <span class="accent">Skills are software agents act with.</span>
         </p>
-        <p style="font-size: 0.9rem; color: var(--muted); line-height: 1.7;">
-          Every API, every data source, every business capability
-          will eventually exist as a signed, discoverable skill.
-          The question is whether the infrastructure that delivers
-          them is trustworthy.
-        </p>
-        <div style="margin-top: 20px; display: flex; gap: 8px; flex-wrap: wrap;">
+        <div style="margin-top: 16px;">
           <span class="tag tag-accent">npm for agents</span>
           <span class="tag tag-blue">but signed</span>
           <span class="tag tag-purple">but verified</span>
         </div>
       </div>
     </div>
+
+    <div style="margin-top: 32px;">
+      <p class="mono" style="font-size: 1rem; color: var(--muted);">
+        enact.tools &nbsp;&middot;&nbsp; @enactprotocol
+      </p>
+    </div>
   </div>
 </section>
 
 
 <script>
-  // progress bar
   const bar = document.getElementById('progress');
   const slides = document.querySelectorAll('.slide');
-const total = 16;
+  const total = 13;
 
-  // progressive disclosure: hide steps past 0 on load
+  // progressive disclosure: hide reveal-steps on load
   document.querySelectorAll('.reveal-step').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(16px)';
@@ -1352,7 +998,7 @@ const total = 16;
     return Math.round(window.scrollY / window.innerHeight);
   }
 
-  // returns true if a step was revealed, false if slide is fully revealed
+  // reveal the next hidden step (or group) on a slide; returns true if something was revealed
   function revealNextStep(slideEl) {
     const steps = slideEl.querySelectorAll('.reveal-step');
     let firstHidden = null;
@@ -1384,7 +1030,6 @@ const total = 16;
   window.addEventListener('scroll', updateProgress);
   updateProgress();
 
-  // keyboard nav
   window.addEventListener('keydown', e => {
     if (e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown') {
       e.preventDefault();
