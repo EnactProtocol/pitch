@@ -334,7 +334,7 @@
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-1">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">01 / 13</div>
+  <div class="slide-number">01 / 15</div>
 
   <div class="eyebrow">A developer talk</div>
   <h1>
@@ -359,7 +359,7 @@
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-2">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">02 / 13</div>
+  <div class="slide-number">02 / 15</div>
 
   <div class="eyebrow">The shift</div>
   <h2>Agents are the <span class="accent">new interface</span></h2>
@@ -394,7 +394,7 @@
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-3">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">03 / 13</div>
+  <div class="slide-number">03 / 15</div>
 
   <div class="eyebrow">Anatomy of an agent</div>
   <h2>Every agent has <span class="accent">three pillars</span></h2>
@@ -443,7 +443,7 @@
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-4">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">04 / 13</div>
+  <div class="slide-number">04 / 15</div>
 
   <div class="eyebrow">Skills</div>
   <h2>A skill is a <span class="accent">folder</span></h2>
@@ -505,7 +505,7 @@
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-5">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">05 / 13</div>
+  <div class="slide-number">05 / 15</div>
 
   <div class="eyebrow">Honest benchmark</div>
   <h2>AGENTS.md <span class="accent">outperforms skills</span></h2>
@@ -564,7 +564,7 @@
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-6">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">06 / 13</div>
+  <div class="slide-number">06 / 15</div>
 
   <div class="eyebrow">The case for skills</div>
   <h2>Skills win <span class="accent">everywhere else</span></h2>
@@ -597,11 +597,146 @@
 
 
 <!-- ─────────────────────────────────────────
-     7 · INTRODUCING ENACT
+     7 · THE THREAT IS REAL
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-7">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">07 / 13</div>
+  <div class="slide-number">07 / 15</div>
+
+  <div class="eyebrow">The threat is real</div>
+  <h2><span class="accent">341</span> malicious skills in one marketplace</h2>
+
+  <div style="margin-top: 36px;" class="cols">
+    <div>
+      <div style="margin-bottom: 24px;">
+        <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:6px;">
+          <span style="font-size:3.5rem; font-weight:800; color:var(--accent); font-family:'JetBrains Mono',monospace;">341</span>
+          <span style="font-size:1.1rem; color:var(--muted);">confirmed malicious</span>
+        </div>
+        <div style="font-size:0.9rem; color:var(--muted);">out of <strong style="color:var(--fg);">2,857</strong> skills audited</div>
+      </div>
+
+      <p style="font-size:0.92rem; color:var(--muted); margin-bottom:14px;">
+        They looked legitimate:
+      </p>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <span class="tag tag-muted">Cryptocurrency tools</span>
+        <span class="tag tag-muted">Google Workspace</span>
+        <span class="tag tag-muted">YouTube utilities</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="card" style="border-color: hsl(0 70% 55% / 0.4); background: hsl(0 70% 55% / 0.06);">
+        <div class="label" style="color: hsl(0,70%,55%);">The attack pattern</div>
+        <div style="display:flex; flex-direction:column; gap:10px; font-size:0.88rem; margin-top:8px;">
+          <div style="display:flex; align-items:flex-start; gap:10px;">
+            <span style="color:var(--muted); font-family:'JetBrains Mono',monospace; font-size:0.75rem; flex-shrink:0;">01</span>
+            <span>Publish legitimate-looking skill</span>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:10px;">
+            <span style="color:var(--muted); font-family:'JetBrains Mono',monospace; font-size:0.75rem; flex-shrink:0;">02</span>
+            <span>Require &ldquo;prerequisite&rdquo; helper install</span>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:10px;">
+            <span style="color:hsl(0,70%,65%); font-family:'JetBrains Mono',monospace; font-size:0.75rem; flex-shrink:0;">03</span>
+            <span style="color:hsl(0,70%,70%);">Drop infostealer (AMOS)</span>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:10px;">
+            <span style="color:hsl(0,70%,65%); font-family:'JetBrains Mono',monospace; font-size:0.75rem; flex-shrink:0;">04</span>
+            <span style="color:hsl(0,70%,70%);">Harvest API keys, wallets, SSH creds</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 28px; max-width: 900px;">
+    <div style="border-radius:12px; overflow:hidden; border:1px solid var(--border);">
+      <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+        <thead>
+          <tr style="background:var(--surface-2);">
+            <th style="padding:11px 22px; text-align:left; font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:var(--accent); border-bottom:1px solid var(--border);">The lethal trifecta</th>
+            <th style="padding:11px 22px; text-align:left; font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:var(--muted); border-bottom:1px solid var(--border);">Risk</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border); background:var(--surface);">
+            <td style="padding:10px 22px; font-weight:600;">Access to private data</td>
+            <td style="padding:10px 22px; color:var(--muted);">Credentials, secrets, cloud config</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border); background:var(--surface);">
+            <td style="padding:10px 22px; font-weight:600;">Exposure to untrusted content</td>
+            <td style="padding:10px 22px; color:var(--muted);">Skills, tools, plugins from open marketplaces</td>
+          </tr>
+          <tr style="background:var(--surface);">
+            <td style="padding:10px 22px; font-weight:600;">Ability to act externally</td>
+            <td style="padding:10px 22px; color:var(--muted);">API calls, deployments, money movement</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:14px; font-size:0.92rem; color:var(--muted);">
+      Add persistent memory + tool invocation &rarr; <strong style="color:var(--fg);">autonomous supply chain attacks.</strong>
+    </p>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     8 · HOW ENACT STOPS EACH ATTACK
+───────────────────────────────────────── -->
+<section class="slide" id="slide-8">
+  <div class="logo-mark">Enact</div>
+  <div class="slide-number">08 / 15</div>
+
+  <div class="eyebrow">The countermeasures</div>
+  <h2>How Enact <span class="accent">stops each attack</span></h2>
+
+  <div style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px;">
+
+    <div class="card" style="border-color: hsl(150 60% 50% / 0.4); background: hsl(150 60% 50% / 0.06);">
+      <div class="label" style="color: var(--green);">Malicious upload</div>
+      <p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">
+        OIDC identity &rarr; Sigstore signing &rarr; transparency log. <strong style="color:var(--fg);">Block unsigned publishers.</strong>
+      </p>
+    </div>
+
+    <div class="card" style="border-color: hsl(150 60% 50% / 0.4); background: hsl(150 60% 50% / 0.06);">
+      <div class="label" style="color: var(--green);">Credential theft</div>
+      <p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">
+        Secrets injected at runtime. Never in repo, memory, or logs. <strong style="color:var(--fg);">Scoped to container.</strong>
+      </p>
+    </div>
+
+    <div class="card" style="border-color: hsl(150 60% 50% / 0.4); background: hsl(150 60% 50% / 0.06);">
+      <div class="label" style="color: var(--green);">Compromised version</div>
+      <p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">
+        Global revocation. Minimum version enforcement. <strong style="color:var(--fg);">Automatic quarantine.</strong>
+      </p>
+    </div>
+
+    <div class="card" style="border-color: hsl(150 60% 50% / 0.4); background: hsl(150 60% 50% / 0.06);">
+      <div class="label" style="color: var(--green);">Unrestricted access</div>
+      <p style="font-size:0.88rem; color:var(--muted); line-height:1.6;">
+        Trust tiers. <strong style="color:var(--fg);">Verified-only installs. Mandatory isolation. No unsigned code.</strong>
+      </p>
+    </div>
+
+  </div>
+
+  <p style="margin-top: 32px; font-size:1.05rem; color: var(--muted); max-width: 640px;">
+    Security built into the supply chain &mdash; not bolted on after.
+  </p>
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     9 · INTRODUCING ENACT
+───────────────────────────────────────── -->
+<section class="slide" id="slide-9">
+  <div class="logo-mark">Enact</div>
+  <div class="slide-number">09 / 15</div>
 
   <div class="eyebrow">Introducing Enact</div>
   <h2>What Enact <span class="accent">adds to a skill</span></h2>
@@ -641,11 +776,11 @@
 
 
 <!-- ─────────────────────────────────────────
-     8 · SKILL PACKAGE FILE
+     10 · SKILL PACKAGE FILE
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-8">
+<section class="slide" id="slide-10">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">08 / 13</div>
+  <div class="slide-number">10 / 15</div>
 
   <div class="eyebrow">Packaging</div>
   <h2>The <span class="accent">skill.package.yml</span></h2>
@@ -695,11 +830,11 @@
 
 
 <!-- ─────────────────────────────────────────
-     9 · THE TRUST PROBLEM
+     11 · THE TRUST PROBLEM
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-9">
+<section class="slide" id="slide-11">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">09 / 13</div>
+  <div class="slide-number">11 / 15</div>
 
   <div class="eyebrow">The problem</div>
   <h2>Skills exist. <span class="accent">Trust doesn't.</span></h2>
@@ -740,11 +875,11 @@
 
 
 <!-- ─────────────────────────────────────────
-     10 · ENACT + SIGSTORE
+     12 · ENACT + SIGSTORE
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-10">
+<section class="slide" id="slide-12">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">10 / 13</div>
+  <div class="slide-number">12 / 15</div>
 
   <div class="eyebrow">The solution</div>
   <h2>Enact — <span class="accent">signed registry</span> for agent skills</h2>
@@ -823,11 +958,11 @@
 
 
 <!-- ─────────────────────────────────────────
-     11 · UNDER THE HOOD
+     13 · UNDER THE HOOD
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-11">
+<section class="slide" id="slide-13">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">11 / 13</div>
+  <div class="slide-number">13 / 15</div>
 
   <div class="eyebrow">Under the hood</div>
   <h2>What happens when an agent <span class="accent">calls a skill</span></h2>
@@ -886,11 +1021,11 @@
 
 
 <!-- ─────────────────────────────────────────
-     12 · DEMO
+     14 · DEMO
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-12">
+<section class="slide" id="slide-14">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">12 / 13</div>
+  <div class="slide-number">14 / 15</div>
 
   <div class="eyebrow">Live demo</div>
   <h2>Let's <span class="accent">see it run</span></h2>
@@ -924,11 +1059,11 @@
 
 
 <!-- ─────────────────────────────────────────
-     13 · CTA
+     15 · CTA
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-13">
+<section class="slide" id="slide-15">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">13 / 13</div>
+  <div class="slide-number">15 / 15</div>
 
   <div class="eyebrow">Get involved</div>
   <h2>Build on the <span class="accent">skills layer</span></h2>
@@ -984,7 +1119,7 @@
 <script>
   const bar = document.getElementById('progress');
   const slides = document.querySelectorAll('.slide');
-  const total = 13;
+  const total = 15;
 
   // progressive disclosure: hide reveal-steps on load
   document.querySelectorAll('.reveal-step').forEach(el => {
