@@ -337,7 +337,7 @@
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-1">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">01 / 13</div>
+  <div class="slide-number">01 / 16</div>
 
   <div class="eyebrow">A developer talk</div>
   <h1>
@@ -362,7 +362,7 @@
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-2">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">02 / 13</div>
+  <div class="slide-number">02 / 16</div>
 
   <div class="eyebrow">The ecosystem</div>
   <h2>Software is changing <span class="accent">shape</span></h2>
@@ -428,81 +428,48 @@
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-3">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">03 / 13</div>
+  <div class="slide-number">03 / 16</div>
 
-  <div class="eyebrow">Model Context Protocol</div>
-  <h2>MCP — the <span class="accent">USB-C</span> for AI tools</h2>
+  <div class="eyebrow">Anatomy of an AI agent</div>
+  <h2>Three pillars of <span class="accent">every agent</span></h2>
 
-  <div style="margin-top: 36px;" class="cols">
-    <div>
-      <p style="font-size:1rem; color: var(--muted); margin-bottom: 24px;">
-        MCP is an open standard by Anthropic that defines how an AI agent communicates with
-        external capabilities — tools, resources, and prompts.
-      </p>
+  <div style="margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; max-width: 1000px;">
 
-      <div class="steps">
-        <li>
-          <div class="step-num">→</div>
-          <div>
-            <strong>Tools</strong>
-            <span class="dim" style="font-size:0.88rem; display:block">Functions the agent can call. <code>lookup_wallet(address)</code></span>
-          </div>
-        </li>
-        <li>
-          <div class="step-num">→</div>
-          <div>
-            <strong>Resources</strong>
-            <span class="dim" style="font-size:0.88rem; display:block">Structured data the agent can read. Files, DB rows, APIs.</span>
-          </div>
-        </li>
-        <li>
-          <div class="step-num">→</div>
-          <div>
-            <strong>Prompts</strong>
-            <span class="dim" style="font-size:0.88rem; display:block">Reusable instruction templates injected into context.</span>
-          </div>
-        </li>
-      </div>
-
-      <div style="margin-top: 24px;">
-        <span class="tag tag-blue">JSON-RPC 2.0</span>
-        <span class="tag tag-muted">stdio / SSE / HTTP</span>
-        <span class="tag tag-green">Open standard</span>
+    <div class="card" style="padding: 32px 28px; border-color: var(--border);">
+      <div style="font-size: 2.4rem; margin-bottom: 16px;">🧠</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-bottom:12px;">Context</div>
+      <p style="font-size:1.5rem; font-weight:800; line-height:1.1; margin-bottom:20px;">Knowledge<br>&amp; Memory</p>
+      <div style="display:flex; flex-direction:column; gap:6px; font-size:0.8rem; font-family:'JetBrains Mono',monospace;">
+        <span style="color:var(--muted);">AGENTS.md / CLAUDE.md</span>
+        <span style="color:var(--muted);">RAG / embeddings</span>
+        <span style="color:var(--muted);">Skills (docs + instructions)</span>
       </div>
     </div>
 
-    <div>
-      <div class="code-block"><span class="c"># Add Enact's MCP server to your agent</span>
-<span class="prompt">$</span> <span class="cmd">claude mcp add enact -- \</span>
-<span class="cmd">    npx -y @enactprotocol/mcp-server</span>
-
-<span class="c"># Now Claude can discover + run skills</span>
-
-<span class="c">User: "Scrape the Anthropic homepage"</span>
-
-<span class="out">Agent → enact_search("scrape web pages")</span>
-<span class="out">Agent → enact_learn("enact/firecrawl")</span>
-<span class="ok">Agent → enact_run("enact/firecrawl:scrape",</span>
-<span class="ok">           {url: "https://anthropic.com"})</span>
-</div>
-
-      <div style="margin-top: 16px;" class="flow">
-        <div class="flow-node">Agent<small>Claude / GPT</small></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-node active">MCP<small>JSON-RPC</small></div>
-        <div class="flow-arrow">→</div>
-        <div class="flow-node">Enact<small>runtime</small></div>
-      </div>
-
-      <div class="card" style="margin-top: 20px; border-color: var(--accent-mid);">
-        <div class="label">The analogy</div>
-        <p style="font-size:0.9rem; line-height:1.7; margin-top: 6px;">
-          MCP gives Claude the <strong>professional kitchen</strong> — tools, access, equipment.<br>
-          Skills give Claude the <strong>recipes</strong> — step-by-step instructions to produce value.
-        </p>
+    <div class="card" style="padding: 32px 28px; border-color: var(--purple); background: hsl(251 40% 54% / 0.06);">
+      <div style="font-size: 2.4rem; margin-bottom: 16px;">⚡</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--purple); margin-bottom:12px;">Cognition</div>
+      <p style="font-size:1.5rem; font-weight:800; line-height:1.1; margin-bottom:20px; color:var(--purple);">Reasoning<br>&amp; Planning</p>
+      <div style="display:flex; flex-direction:column; gap:6px; font-size:0.8rem; font-family:'JetBrains Mono',monospace;">
+        <span style="color:var(--muted);">Claude / GPT / Gemini</span>
+        <span style="color:var(--muted);">chain-of-thought</span>
+        <span style="color:var(--muted);">tool-use, planning</span>
       </div>
     </div>
+
+    <div class="card" style="padding: 32px 28px; border-color: var(--accent-mid); background: var(--accent-dim);">
+      <div style="font-size: 2.4rem; margin-bottom: 16px;">🔧</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:12px;">Action</div>
+      <p style="font-size:1.5rem; font-weight:800; line-height:1.1; margin-bottom:20px; color:var(--accent);">Tools<br>&amp; Execution</p>
+      <div style="display:flex; flex-direction:column; gap:6px; font-size:0.8rem; font-family:'JetBrains Mono',monospace;">
+        <span style="color:var(--accent);">MCP (JSON-RPC)</span>
+        <span style="color:var(--accent);">CLI / bash</span>
+        <span style="color:var(--accent);">APIs &amp; services</span>
+      </div>
+    </div>
+
   </div>
+
 </section>
 
 
@@ -511,7 +478,7 @@
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-4" data-steps="3">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">04 / 13</div>
+  <div class="slide-number">04 / 16</div>
 
   <div class="eyebrow">Skills</div>
   <h2>What is a <span class="accent">Skill?</span></h2>
@@ -569,7 +536,7 @@
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-5" data-steps="2">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">05 / 13</div>
+  <div class="slide-number">05 / 16</div>
 
   <div class="eyebrow">Skills</div>
   <h2>Inside a <span class="accent">SKILL.md</span></h2>
@@ -652,11 +619,116 @@ User: "Check balance on 0xd8dA...?"
 
 
 <!-- ─────────────────────────────────────────
-     6 · SKILLS PACKAGES
+     6 · AGENTS.MD BENCHMARK
 ───────────────────────────────────────── -->
 <section class="slide" id="slide-6">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">06 / 13</div>
+  <div class="slide-number">06 / 16</div>
+
+  <div class="eyebrow">Honest benchmark</div>
+  <h2>AGENTS.md <span class="accent">outperforms skills</span></h2>
+
+  <p style="font-size:1rem; color:var(--muted); margin-top:16px; max-width:680px;">
+    Vercel's Next.js team evals, targeting APIs not yet in model training data.
+    <span class="mono" style="font-size:0.85em;">Source: Jude Gao, Jan 2026</span>
+  </p>
+
+  <div style="margin-top: 28px; max-width: 860px;">
+    <div style="border-radius:12px; overflow:hidden; border:1px solid var(--border);">
+      <table style="width:100%; border-collapse:collapse; font-family:'JetBrains Mono',monospace; font-size:1rem;">
+        <thead>
+          <tr style="background:var(--surface-2);">
+            <th style="padding:14px 24px; text-align:left; font-weight:600; color:var(--muted); border-bottom:1px solid var(--border);">Configuration</th>
+            <th style="padding:14px 24px; text-align:center; font-weight:600; color:var(--muted); border-bottom:1px solid var(--border);">Pass rate</th>
+            <th style="padding:14px 24px; text-align:center; font-weight:600; color:var(--muted); border-bottom:1px solid var(--border);">vs baseline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border); background:var(--surface);">
+            <td style="padding:16px 24px; color:var(--muted);">Baseline — no docs</td>
+            <td style="padding:16px 24px; text-align:center; font-size:1.15rem; font-weight:600;">53%</td>
+            <td style="padding:16px 24px; text-align:center; color:var(--muted);">—</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border); background:var(--surface);">
+            <td style="padding:16px 24px; color:var(--muted);">Skill — default (no trigger instruction)</td>
+            <td style="padding:16px 24px; text-align:center; font-size:1.15rem; font-weight:600;">53%</td>
+            <td style="padding:16px 24px; text-align:center; color:var(--muted);">+0 pp</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border); background:var(--surface);">
+            <td style="padding:16px 24px; color:var(--muted);">Skill + explicit trigger instruction</td>
+            <td style="padding:16px 24px; text-align:center; font-size:1.15rem; font-weight:600; color:var(--gold);">79%</td>
+            <td style="padding:16px 24px; text-align:center; color:var(--gold); font-weight:600;">+26 pp</td>
+          </tr>
+          <tr style="background: hsl(150 60% 50% / 0.06); border-top: 1px solid hsl(150 60% 50% / 0.3);">
+            <td style="padding:20px 24px; font-weight:700; font-size:1.05rem;">AGENTS.md — 8 KB compressed docs index</td>
+            <td style="padding:20px 24px; text-align:center; font-size:1.6rem; font-weight:800; color:var(--green);">100%</td>
+            <td style="padding:20px 24px; text-align:center; font-size:1.15rem; font-weight:700; color:var(--green);">+47 pp</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+    <span class="tag tag-muted">56% of runs: skill never invoked</span>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     7 · WHY SKILLS
+───────────────────────────────────────── -->
+<section class="slide" id="slide-7">
+  <div class="logo-mark">Enact</div>
+  <div class="slide-number">07 / 16</div>
+
+  <div class="eyebrow">Skills</div>
+  <h2>Why <span class="accent">Skills?</span></h2>
+
+  <div style="margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 960px;">
+
+    <div class="card" style="padding: 28px 32px; border-color: var(--accent-mid); background: var(--accent-dim);">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:16px;">Dynamic discovery</div>
+      <p style="font-size:1.3rem; font-weight:700; line-height:1.2; margin-bottom:16px;">Agents find what they need at runtime</p>
+      <p style="font-size:0.9rem; color:var(--muted); line-height:1.65;">
+        AGENTS.md is fixed at session start. Skills can be <strong>semantically searched</strong> from a large index — the agent pulls in exactly the right capability for the task at hand.
+      </p>
+    </div>
+
+    <div class="card" style="padding: 28px 32px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-bottom:16px;">More than docs</div>
+      <p style="font-size:1.3rem; font-weight:700; line-height:1.2; margin-bottom:16px;">Skills contain executable code</p>
+      <p style="font-size:0.9rem; color:var(--muted); line-height:1.65;">
+        Not just instructions — actual scripts, build steps, secrets handling. An AGENTS.md can't run a database migration. A skill can.
+      </p>
+    </div>
+
+    <div class="card" style="padding: 28px 32px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-bottom:16px;">Conceptual grouping</div>
+      <p style="font-size:1.3rem; font-weight:700; line-height:1.2; margin-bottom:16px;">Packaged, versioned, named</p>
+      <p style="font-size:0.9rem; color:var(--muted); line-height:1.65;">
+        One skill = one capability. Discoverable, composable, auditable. A flat AGENTS.md with embedded scripts loses all of that structure.
+      </p>
+    </div>
+
+    <div class="card" style="padding: 28px 32px; border-color: var(--accent-mid); background: var(--accent-dim);">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:16px;">Vertical workflows</div>
+      <p style="font-size:1.3rem; font-weight:700; line-height:1.2; margin-bottom:16px;">Purpose-built for one job</p>
+      <p style="font-size:0.9rem; color:var(--muted); line-height:1.65;">
+        Skills shine for explicit, repeatable tasks: migrate this API, scan this contract, query this database. Triggered by need, not always loaded.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     9 · SKILLS PACKAGES
+───────────────────────────────────────── -->
+<section class="slide" id="slide-8">
+  <div class="logo-mark">Enact</div>
+  <div class="slide-number">08 / 16</div>
 
   <div class="eyebrow">Skills</div>
   <h2>Capabilities, <span class="accent">packaged for agents</span></h2>
@@ -715,11 +787,11 @@ User: "Check balance on 0xd8dA...?"
 
 
 <!-- ─────────────────────────────────────────
-     6 · SKILLS INTRO (on demand)
+     10 · SKILLS INTRO (on demand)
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-7">
+<section class="slide" id="slide-9">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">07 / 13</div>
+  <div class="slide-number">09 / 16</div>
 
   <div class="eyebrow">Skills</div>
   <h2>Capabilities, <span class="accent">on demand</span></h2>
@@ -779,9 +851,9 @@ User: "Check balance on 0xd8dA...?"
 <!-- ─────────────────────────────────────────
      7 · THE PROBLEM
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-8">
+<section class="slide" id="slide-10">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">08 / 13</div>
+  <div class="slide-number">10 / 16</div>
 
   <div class="eyebrow">The problem</div>
   <h2>Skills exist. <span class="accent">Trust doesn't.</span></h2>
@@ -827,9 +899,9 @@ User: "Check balance on 0xd8dA...?"
 <!-- ─────────────────────────────────────────
      8 · ENACT
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-9">
+<section class="slide" id="slide-11">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">09 / 13</div>
+  <div class="slide-number">11 / 16</div>
 
   <div class="eyebrow">The solution</div>
   <h2>Enact — a <span class="accent">runtime and registry</span> for agent skills</h2>
@@ -910,11 +982,101 @@ User: "Check balance on 0xd8dA...?"
 
 
 <!-- ─────────────────────────────────────────
-     9 · HOW IT WORKS (technical)
+     9b · SIGSTORE
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-10">
+<section class="slide" id="slide-12">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">10 / 13</div>
+  <div class="slide-number">12 / 16</div>
+
+  <div class="eyebrow">Trust infrastructure</div>
+  <h2>Sigstore — <span class="accent">identity-based signing</span> for the supply chain</h2>
+
+  <div style="margin-top: 36px;" class="cols">
+    <div>
+      <p style="font-size:1rem; color: var(--muted); margin-bottom: 24px;">
+        Sigstore is an open-source project that makes code signing <strong>keyless</strong>.
+        No PGP keys to manage, no certificates to rotate. Publishers prove who they are
+        with an identity they already have.
+      </p>
+
+      <div class="steps">
+        <li>
+          <div class="step-num">1</div>
+          <div>
+            <strong>Cosign</strong>
+            <span class="dim" style="font-size:0.88rem; display:block;">
+              Signs artifacts using OIDC identity (GitHub, Google, etc). Short-lived keys generated per signing event — nothing to manage.
+            </span>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">2</div>
+          <div>
+            <strong>Fulcio</strong>
+            <span class="dim" style="font-size:0.88rem; display:block;">
+              A certificate authority that issues short-lived certificates bound to an OIDC identity. Proves <em>who</em> signed.
+            </span>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">3</div>
+          <div>
+            <strong>Rekor</strong>
+            <span class="dim" style="font-size:0.88rem; display:block;">
+              An immutable transparency log. Every signature is publicly recorded — you can prove a signature existed at a specific time.
+            </span>
+          </div>
+        </li>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <span class="tag tag-green">open source</span>
+        <span class="tag tag-blue">Linux Foundation</span>
+        <span class="tag tag-muted">used by npm, PyPI, Kubernetes</span>
+      </div>
+    </div>
+
+    <div>
+      <div style="margin-bottom: 20px;" class="flow">
+        <div class="flow-node">Publisher<small>OIDC login</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">Fulcio<small>short-lived cert</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node active">Cosign<small>sign artifact</small></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">Rekor<small>log entry</small></div>
+      </div>
+
+      <div class="card" style="margin-top: 20px; border-color: var(--accent);">
+        <div class="label">Why this matters for skills</div>
+        <p style="font-size:0.9rem; color: var(--muted); line-height: 1.7; margin-top: 6px;">
+          Traditional code signing requires developers to manage long-lived keys — most don't bother.
+          Sigstore removes the friction: log in, sign, done.
+        </p>
+        <p style="font-size:0.9rem; line-height: 1.7; margin-top: 12px;">
+          Every skill published to Enact gets a <strong>verifiable identity</strong> and a
+          <strong>tamper-evident log entry</strong> — automatically.
+        </p>
+      </div>
+
+      <div class="card" style="margin-top: 16px;">
+        <div class="label">The analogy</div>
+        <p style="font-size:0.9rem; line-height: 1.7; margin-top: 6px;">
+          Sigstore is to code signing what <strong>Let's Encrypt</strong> was to HTTPS —
+          it makes the secure path the easy path.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     10 · HOW IT WORKS (technical)
+───────────────────────────────────────── -->
+<section class="slide" id="slide-13">
+  <div class="logo-mark">Enact</div>
+  <div class="slide-number">13 / 16</div>
 
   <div class="eyebrow">Under the hood</div>
   <h2>What happens when an agent <span class="accent">calls a skill</span></h2>
@@ -983,11 +1145,11 @@ User: "Check balance on 0xd8dA...?"
 
 
 <!-- ─────────────────────────────────────────
-     10 · ENV / SECRETS
+     11 · ENV / SECRETS
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-11">
+<section class="slide" id="slide-14">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">11 / 13</div>
+  <div class="slide-number">14 / 16</div>
 
   <div class="eyebrow">Secrets &amp; environment</div>
   <h2>Skills declare what they need.<br><span class="accent">Enact injects it.</span></h2>
@@ -1053,9 +1215,9 @@ User: "Check balance on 0xd8dA...?"
 <!-- ─────────────────────────────────────────
      8 · DEMO
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-12">
+<section class="slide" id="slide-15">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">12 / 13</div>
+  <div class="slide-number">15 / 16</div>
 
   <div class="eyebrow">Live demo</div>
   <h2>Let's <span class="accent">see it run</span></h2>
@@ -1100,9 +1262,9 @@ User: "Check balance on 0xd8dA...?"
 <!-- ─────────────────────────────────────────
      9 · GET INVOLVED
 ───────────────────────────────────────── -->
-<section class="slide" id="slide-13">
+<section class="slide" id="slide-16">
   <div class="logo-mark">Enact</div>
-  <div class="slide-number">13 / 13</div>
+  <div class="slide-number">16 / 16</div>
 
   <div class="eyebrow">Get involved</div>
   <h2>Build on the <span class="accent">skills layer</span></h2>
@@ -1143,7 +1305,7 @@ User: "Check balance on 0xd8dA...?"
         <div class="eyebrow" style="margin-bottom: 10px;">find us</div>
         <p class="mono" style="font-size: 1rem; color: var(--muted);">
           enact.tools<br>
-          @enact on GitHub
+          @enactprotocol on GitHub
         </p>
       </div>
     </div>
@@ -1176,7 +1338,7 @@ User: "Check balance on 0xd8dA...?"
   // progress bar
   const bar = document.getElementById('progress');
   const slides = document.querySelectorAll('.slide');
-const total = 12;
+const total = 16;
 
   // progressive disclosure: hide steps past 0 on load
   document.querySelectorAll('.reveal-step').forEach(el => {
